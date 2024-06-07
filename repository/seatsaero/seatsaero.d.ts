@@ -11,50 +11,50 @@ export interface SeatsAeroApiResponse<T> {
   rateLimit: RateLimit
 }
 export interface SeatsAeroRoute {
-  ID: string;
-  OriginAirport: string;
-  OriginRegion: string;
-  DestinationAirport: string;
-  DestinationRegion: string;
-  NumDaysOut: number;
-  Distance: number;
-  Source: string;
+  ID: string
+  OriginAirport: string
+  OriginRegion: string
+  DestinationAirport: string
+  DestinationRegion: string
+  NumDaysOut: number
+  Distance: number
+  Source: string
 }
 
 export interface SeatsAeroCachedData {
-  ID: string;
-  RouteID: string;
-  Route: SeatsAeroRoute;
-  Date: string;
-  ParsedDate: string;
+  ID: string
+  RouteID: string
+  Route: SeatsAeroRoute
+  Date: string
+  ParsedDate: string
 
-  YAvailable: boolean;
-  WAvailable: boolean;
-  JAvailable: boolean;
-  FAvailable: boolean;
+  YAvailable: boolean
+  WAvailable: boolean
+  JAvailable: boolean
+  FAvailable: boolean
 
-  YMileageCost: string;
-  WMileageCost: string;
-  JMileageCost: string;
-  FMileageCost: string;
+  YMileageCost: string
+  WMileageCost: string
+  JMileageCost: string
+  FMileageCost: string
 
-  YRemainingSeats: number;
-  WRemainingSeats: number;
-  JRemainingSeats: number;
-  FRemainingSeats: number;
+  YRemainingSeats: number
+  WRemainingSeats: number
+  JRemainingSeats: number
+  FRemainingSeats: number
 
-  YAirlines: string;
-  WAirlines: string;
-  JAirlines: string;
-  FAirlines: string;
+  YAirlines: string
+  WAirlines: string
+  JAirlines: string
+  FAirlines: string
 
-  YDirect: boolean;
-  WDirect: boolean;
-  JDirect: boolean;
-  FDirect: boolean;
+  YDirect: boolean
+  WDirect: boolean
+  JDirect: boolean
+  FDirect: boolean
 
-  Source: string;
-  CreatedAt: string;
-  UpdatedAt: string;
-  AvailabilityTrips: string;
+  Source: string
+  CreatedAt: string
+  UpdatedAt: string
+  AvailabilityTrips: string
 }

@@ -7,7 +7,7 @@
       <AppNavigation />
 
       <div class="flex items-center gap-x-5 py-2 sm:py-0 sm:ms-auto">
-        <AppApiUsage/>
+        <AppApiUsage />
         <AppApiKey />
       </div>
     </template>
