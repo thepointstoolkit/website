@@ -159,7 +159,6 @@ defineProps({
     default: () => ({
       origin: '',
       destination: '',
-      destination: '',
       startDate: '',
       endDate: '',
       cabin: '',
@@ -170,7 +169,6 @@ defineProps({
 
 const formData = reactive({
   origin: '',
-  destination: '',
   destination: '',
   startDate: '',
   endDate: '',
