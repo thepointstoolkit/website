@@ -1,0 +1,22 @@
+[
+  {
+    "name": "First",
+    "code": "F",
+    "value": "first"
+  },
+  {
+    "name": "Business",
+    "code": "J",
+    "value": "business"
+  },
+  {
+    "name": "Premium",
+    "code": "W",
+    "value": "premium"
+  },
+  {
+    "name": "Economy",
+    "code": "Y",
+    "value": "economy"
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "aeromexico": {
+    "name": "Aeromexico Club Premier ",
+    "value": "aeromexico"
+  },
+  "aeroplan": {
+    "name": "Air Canada Aeroplan",
+    "value": "aeroplan"
+  },
+  "flyingblue": {
+    "name": "Air France/KLM Flying Blue",
+    "value": "flyingblue"
+  },
+  "alaska": {
+    "name": "Alaska Mileage Plan",
+    "value": "alaska"
+  },
+  "american": {
+    "name": "American Airlines",
+    "value": "american"
+  },
+  "azul": {
+    "name": "Azul TudoAzul",
+    "value": "azul"
+  },
+  "delta": {
+    "name": "Delta SkyMiles",
+    "value": "delta"
+  },
+  "emirates": {
+    "name": "Emirates Skywards",
+    "value": "emirates"
+  },
+  "etihad": {
+    "name": "Etihad Guest",
+    "value": "etihad"
+  },
+  "smiles": {
+    "name": "GOL Smiles",
+    "value": "smiles"
+  },
+  "jetblue": {
+    "name": "JetBlue TrueBlue",
+    "value": "jetblue"
+  },
+  "qantas": {
+    "name": "Qantas Frequent Flyer",
+    "value": "qantas"
+  },
+  "eurobonus": {
+    "name": "SAS EuroBonus",
+    "value": "eurobonus"
+  },
+  "united": {
+    "name": "United MileagePlus",
+    "value": "united"
+  },
+  "virginatlantic": {
+    "name": "Virgin Atlantic Flying Club",
+    "value": "virginatlantic"
+  },
+  "velocity": {
+    "name": "Virgin Australia Velocity",
+    "value": "velocity"
+  }
+}

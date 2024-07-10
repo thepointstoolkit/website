@@ -45,7 +45,6 @@ import BreadcrumbItem from './Breadcrumb/BreadcrumbItem.vue'
 
 const route = useRoute()
 const router = useRouter()
-defineProps(['title'])
 const crumbs = computed(() => {
   const fullPath = route.fullPath
   const params = fullPath.startsWith('/')

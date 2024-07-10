@@ -1,72 +1,172 @@
 <template>
-  <form @submit.prevent="submitForm">
-    <div class="mt-6 grid gap-4 lg:gap-6">
-      <div class="flex flex-col sm:flex-row items-end">
-        <div class="flex-1">
-          <FormInput
-            v-model="formData.origin"
-            class="uppercase"
-            label="Origin"
-            :minlength="3"
-            required
-            :maxlength="3"
-            :is-valid="!v$.origin.$invalid"
-            @change="v$.origin.$touch"
-          />
+  <div class="relative">
+    <form @submit.prevent="submitForm">
+      <div>
+        <FormSelect
+          v-model="formData.source"
+          label="Source"
+        >
+          <option value="">
+            All sources
+          </option>
+          <option
+            v-for="sourceOption in sourceOptions"
+            :key="sourceOption.value"
+            :value="sourceOption.value"
+          >
+            {{ sourceOption.name }}
+          </option>
+        </FormSelect>
+      </div>
+      <div class="mt-6 grid gap-4 lg:gap-6">
+        <div class="flex flex-col sm:flex-row items-end">
+          <div class="flex-1">
+            <FormInput
+              v-model="formData.origin"
+              class="uppercase"
+              label="Origin"
+              required
+              :is-valid="!v$.origin.$invalid"
+              help="A list of origin airports. Comma-delimited if multiple, such as &quot;
+            SFO,LAX&quot;."
+              @change="v$.origin.$touch"
+            />
+          </div>
+          <div
+            class="p-2 text-neutral-500 cursor-pointer"
+            @click="swapDestinations"
+          >
+            <Icon
+              name="tabler:switch-horizontal"
+              size="2em"
+            />
+          </div>
+          <div class="flex-1">
+            <FormInput
+              v-model="formData.destination"
+              class="uppercase"
+              label="Destination"
+              required
+              :is-valid="!v$.destination.$invalid"
+              help="A list of destination airports. Comma-delimited if multiple, such as
+            &quot;FRA,LHR&quot;."
+              @change="v$.destination.$touch"
+            />
+          </div>
         </div>
         <div
-          class="p-2 text-neutral-500 cursor-pointer"
-          @click="swapDestinations"
+          v-if="showDates"
+          class="flex flex-col sm:flex-row items-end gap-4"
         >
-          <Icon
-            name="tabler:switch-horizontal"
-            size="2em"
-          />
+          <div class="flex-1">
+            <FormInput
+              v-model="formData.startDate"
+              type="date"
+              label="Start Date"
+            />
+          </div>
+          <div class="flex-1">
+            <FormInput
+              v-model="formData.endDate"
+              type="date"
+              label="End Date"
+            />
+          </div>
         </div>
-        <div class="flex-1">
-          <FormInput
-            v-model="formData.destination"
-            class="uppercase"
-            label="Destination"
-            required
-            :minlength="3"
-            :maxlength="3"
-            :is-valid="!v$.destination.$invalid"
-            @change="v$.destination.$touch"
-          />
+        <div>
+          <FormSelect
+            v-model="formData.cabin"
+            label="Cabin"
+          >
+            <option value="">
+              All cabins
+            </option>
+            <option
+              v-for="cabinOption in cabinOptions"
+              :key="cabinOption.code"
+              :value="cabinOption.value"
+            >
+              {{
+                cabinOption.name }}
+            </option>
+          </FormSelect>
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row items-end gap-4">
-        <div class="flex-1">
-          <FormInput
-            v-model="formData.startDate"
-            type="date"
-            label="Start Date"
-          />
-        </div>
-        <div class="flex-1">
-          <FormInput
-            v-model="formData.endDate"
-            type="date"
-            label="End Date"
-          />
+      <Alert
+        v-show="broadSearch"
+        class="my-2 text-sm"
+        type="warning"
+        title="⚠️ Broad search"
+      >
+        <p>
+          Not
+          setting
+          any
+          additional criterias can lead into a broad search.
+        </p>
+        <p>
+          Which
+          may consume a lot of API credits and freeze your browser.
+        </p>
+      </Alert>
+      <BButtonSolid
+        :variant="broadSearch ? 'warning' : 'primary'"
+        type="submit"
+        class="w-full justify-center mt-3"
+      >
+        Search
+      </BButtonSolid>
+    </form>
+    <CachedSearchFilters />
+
+    <div v-show="isLoading">
+      <div
+        class="absolute top-0 start-0 size-full bg-white/50 rounded-lg dark:bg-neutral-800/40"
+      />
+
+      <div
+        class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <div
+          class="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full dark:text-blue-500"
+          role="status"
+          aria-label="loading"
+        >
+          <span class="sr-only">Loading...</span>
         </div>
       </div>
     </div>
-
-    <BButtonSolid
-      type="submit"
-      class="w-full justify-center mt-3"
-    >
-      Search
-    </BButtonSolid>
-  </form>
+  </div>
 </template>
 
 <script setup>
-import { required, minLength, maxLength } from '@vuelidate/validators'
+import { required } from '@vuelidate/validators'
 import { useVuelidate } from '@vuelidate/core'
+import { reactive } from 'vue'
 import { useSeatsAeroCachedSearchApi } from '@/composables/useSeatsAeroCachedSearchApi'
+import cabins from '~/data/cabins.json'
+import sources from '~/data/sources.json'
+
+const { isLoading, start, finish } = useLoadingIndicator()
+defineProps({
+  showDates: {
+    type: Boolean,
+    default: true,
+  },
+  modelValue: {
+    type: Object,
+    required: true,
+    default: () => ({
+      origin: '',
+      destination: '',
+      destination: '',
+      startDate: '',
+      endDate: '',
+      cabin: '',
+      source: '',
+    }),
+  },
+})
 
 const formData = reactive({
   origin: '',
@@ -74,21 +174,44 @@ const formData = reactive({
   destination: '',
   startDate: '',
   endDate: '',
+  cabin: '',
+  source: '',
 })
+
+const airportList = (value) => {
+  if (!value) {
+    return false
+  }
+
+  const parts = value.split(',')
+
+  for (const part of parts) {
+    const trimmedPart = part.trim()
+    if (trimmedPart.length !== 3) {
+      return false
+    }
+  }
+
+  return true
+}
 
 const rules = computed(() => {
   return {
-    origin: { required, minLength: minLength(3), maxLength: maxLength(3) },
-    destination: { required, minLength: minLength(3), maxLength: maxLength(3) },
+    origin: { required, airportList },
+    destination: { required, airportList },
   }
 })
+
 const v$ = useVuelidate(rules, formData)
+
 const submitForm = async () => {
   v$.value.$validate()
   const { get } = useSeatsAeroCachedSearchApi()
 
   if (!v$.value.$error) {
+    start()
     get(formData)
+    finish()
   }
 }
 
@@ -98,4 +221,18 @@ function swapDestinations() {
   formData.origin = destination
   formData.destination = origin
 }
+
+const cabinOptions = computed(() => cabins)
+const sourceOptions = computed(() => sources)
+
+const broadSearch = computed(() => {
+  if (formData.cabin === '' && (formData.startDate === '' || formData.endDate === '') && formData.source === '') {
+    return true
+  }
+  return false
+})
+
+const emit = defineEmits(['update:modelValue'])
+
+watchEffect(formData, emit('update:modelValue', formData))
 </script>

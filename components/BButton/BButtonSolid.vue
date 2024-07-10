@@ -1,26 +1,31 @@
 <template>
-  <BButton :class="[colorClasses]">
+  <BButton
+    :class="[
+      'border-transparent text-white   disabled:opacity-50',
+      colorClasses,
+    ]"
+  >
     <slot />
   </BButton>
 </template>
 
-<script>
-import BButton from './BButton.vue'
+<script setup>
+const props = defineProps({
+  variant: {
+    type: String,
+    default: 'primary',
+  },
+})
 
-export default {
-  components: {
-    BButton,
-  },
-  props: {
-    color: {
-      type: String,
-      default: 'blue',
-    },
-  },
-  computed: {
-    colorClasses() {
-      return 'border-transparent bg-' + this.color + '-600 text-white hover:bg-' + this.color + '-700 disabled:opacity-50'
-    },
-  },
-}
+const colorClasses = computed(() => {
+  switch (props.variant) {
+    case 'danger':
+      return 'bg-red-600 hover:bg-red-700'
+    case 'warning':
+      return 'bg-yellow-600 hover:bg-yellow-700'
+    case 'primary':
+    default:
+      return 'bg-blue-600 hover:bg-blue-700'
+  }
+})
 </script>

@@ -1,5 +1,6 @@
 <template>
   <FormInput
+    :validate="false"
     type="password"
     v-bind="$props"
   >
@@ -55,7 +56,26 @@
 </template>
 
 <script setup>
-const props = defineProps(['label', 'id', 'value', 'class', 'floatingLabel', 'labelClasses', 'placeholder'])
+const props = defineProps({
+  label: {
+    type: String,
+  },
+  labelClasses: {
+    type: String,
+  },
+  floatingLabel: {
+    type: Boolean,
+  },
+  id: {
+    type: String,
+  },
+  class: {
+    type: String,
+  },
+  placeholder: {
+    type: String,
+  },
+})
 const togglePasswordProp = computed(() => {
   return '{"target":"#' + props.id + '"}'
 })

@@ -1386,6 +1386,13 @@
     "@stylistic/eslint-plugin-ts" "2.1.0"
     "@types/eslint" "^8.56.10"
 
+"@tailwindcss/forms@^0.5.7":
+  "integrity" "sha512-QE7X69iQI+ZXwldE+rzasvbJiyV/ju1FGHH0Qn2W3FKbuYtqp8LKcy6iSw79fVUT5/Vvf+0XgLCeYVG+UV6hOw=="
+  "resolved" "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.7.tgz"
+  "version" "0.5.7"
+  dependencies:
+    "mini-svg-data-uri" "^1.2.3"
+
 "@trysound/sax@0.2.0":
   "integrity" "sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA=="
   "resolved" "https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz"
@@ -3177,6 +3184,11 @@
     "d3-transition" "3"
     "d3-zoom" "3"
 
+"date-fns@^3.6.0":
+  "integrity" "sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww=="
+  "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-3.6.0.tgz"
+  "version" "3.6.0"
+
 "db0@^0.1.4":
   "integrity" "sha512-Ft6eCwONYxlwLjBXSJxw0t0RYtA5gW9mq8JfBXn9TtC0nDPlqePAhpv9v4g9aONBi6JI1OXHTKKkUYGd+BOrCA=="
   "resolved" "https://registry.npmjs.org/db0/-/db0-0.1.4.tgz"
@@ -4732,6 +4744,11 @@
   "resolved" "https://registry.npmjs.org/isexe/-/isexe-3.1.1.tgz"
   "version" "3.1.1"
 
+"itemsjs@^2.1.25":
+  "integrity" "sha512-6berzY1e2LhJeXxm5Zjwtvx21DhH4yrF3mhDhhjXpG1Nt74Dkd7qkqX1q6qWJZGduMkZYpSWUxmQZxwA37fHzg=="
+  "resolved" "https://registry.npmjs.org/itemsjs/-/itemsjs-2.1.25.tgz"
+  "version" "2.1.25"
+
 "jackspeak@^3.1.2":
   "integrity" "sha512-htOzIMPbpLid/Gq9/zaz9SfExABxqRe1sSCdxntlO/aMD6u0issZQiY25n2GKQUtJ02j7z5sfptlAOMpWWOmvw=="
   "resolved" "https://registry.npmjs.org/jackspeak/-/jackspeak-3.2.3.tgz"
@@ -5208,6 +5225,11 @@
   "integrity" "sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg=="
   "resolved" "https://registry.npmjs.org/min-indent/-/min-indent-1.0.1.tgz"
   "version" "1.0.1"
+
+"mini-svg-data-uri@^1.2.3":
+  "integrity" "sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg=="
+  "resolved" "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz"
+  "version" "1.4.4"
 
 "minimatch@^3.0.4":
   "integrity" "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw=="
@@ -7261,7 +7283,7 @@
     "portfinder" "^1.0.26"
     "replace-in-file" "^6.1.0"
 
-"tailwindcss@~3.4.3", "tailwindcss@1 || 2 || 2.0.1-compat || 3":
+"tailwindcss@>=3.0.0 || >= 3.0.0-alpha.1", "tailwindcss@~3.4.3", "tailwindcss@1 || 2 || 2.0.1-compat || 3":
   "integrity" "sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.3.tgz"
   "version" "3.4.3"

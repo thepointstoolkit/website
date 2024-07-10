@@ -11,4 +11,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.hook('page:finish', () => {
     window.HSStaticMethods.autoInit()
   })
+  nuxtApp.hook('ajax:finish', () => {
+    window.HSStaticMethods.autoInit()
+  })
 })

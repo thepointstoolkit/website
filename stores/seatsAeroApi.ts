@@ -27,9 +27,9 @@ export const useSeatsAeroApiStore = defineStore('app', {
     },
   },
   hydrate(state, initialState) {
-    state.apiKey = useLocalStorage('seatsaero-apiKey', initialState.apiKey)
-    state.rateLimitLimit = useLocalStorage('seatsaero-rateLimit-limit', initialState.rateLimitLimit)
-    state.rateLimitRemaining = useLocalStorage('seatsaero-rateLimit-remaining', initialState.rateLimitRemaining)
-    state.rateLimitReset = useLocalStorage('seatsaero-rateLimit-reset', initialState.rateLimitReset)
+    state.apiKey = useLocalStorage('seatsaero-apiKey', initialState.apiKey ?? '')
+    state.rateLimitLimit = useLocalStorage('seatsaero-rateLimit-limit', initialState.rateLimitLimit ?? 1000)
+    state.rateLimitRemaining = useLocalStorage('seatsaero-rateLimit-remaining', initialState.rateLimitRemaining ?? 1000)
+    state.rateLimitReset = useLocalStorage('seatsaero-rateLimit-reset', initialState.rateLimitReset ?? 0)
   },
 })

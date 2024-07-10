@@ -16,6 +16,7 @@ class CachedSearchModule extends FetchFactory<SeatsAeroApiResponse<SeatsAeroCach
     take = 1000,
     orderBy = null,
     skip = null,
+    source = null,
   }: {
     originAirport: string
     destinationAirport: string
@@ -26,8 +27,9 @@ class CachedSearchModule extends FetchFactory<SeatsAeroApiResponse<SeatsAeroCach
     take: number | null
     orderBy: string | null
     skip: number | null
+    source: string | null
   }) {
-    const cleanQuery = cleanEmpty({
+    const queryParams = {
       origin_airport: originAirport,
       destination_airport: destinationAirport,
       cabin: cabin,
@@ -37,12 +39,13 @@ class CachedSearchModule extends FetchFactory<SeatsAeroApiResponse<SeatsAeroCach
       take: take,
       order_by: orderBy,
       skip: skip,
-    })
+      source: source,
+    }
+    const cleanQuery = cleanEmpty({ ...queryParams })
 
     const fetchOptions: FetchOptions<'json'> = {
       query: cleanQuery,
     }
-    console.log({ fetchOptions })
     return this.call(
       'GET',
       this.ENDPOINT,

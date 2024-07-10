@@ -37,6 +37,7 @@
 
 <script setup>
 import { storeToRefs } from 'pinia'
+import { watch } from 'vue'
 
 const store = useSeatsAeroApiStore()
 const { setApiKey } = store // have all non reactiave stuff here

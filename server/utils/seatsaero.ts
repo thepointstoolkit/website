@@ -21,6 +21,7 @@ export default function (config) {
       }
       context.response._data = {
         rateLimit: rateLimit,
+        moreURL: rateLimit,
         ...context.response._data,
       }
     },

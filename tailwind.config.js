@@ -5,9 +5,15 @@ export default {
     './node_modules/preline/preline.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      rotate: {
+        135: '135deg',
+        225: '225deg',
+      },
+    },
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('preline/plugin'),
   ],
 }
