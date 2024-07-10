@@ -4,4 +4,12 @@
   "include": [
     "repository/seatsaero/seatsaero.d.ts"
   ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+  }
 }

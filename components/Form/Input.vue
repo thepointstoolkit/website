@@ -27,7 +27,7 @@
         v-if="label && floatingLabel"
         :for="id"
         :class="[labelClasses]"
-        class="absolute top-0 start-0 p-3 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+        class="absolute top-0 start-0 p-3 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none
       peer-focus:scale-90
       peer-focus:translate-x-0.5
       peer-focus:-translate-y-1.5

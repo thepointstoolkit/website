@@ -1,6 +1,6 @@
 import type { FetchOptions } from 'ofetch'
 import { $fetch } from 'ofetch'
-import CachedSearchModule from '~/repository/seatsaero/CachedSearch'
+import CachedSearchModule from '@/repository/seatsaero/cachedSearch'
 
 interface ISeatsAeroModule {
   cachedData: CachedSearchModule

@@ -66,10 +66,10 @@ const availabilities = computed(() => {
 })
 
 function hasAnyAvailabilityOn(cabin) {
-  return this.availabilities?.filter(availability => availability[`${cabin}Available`]).length > 0
+  return availabilities.value?.filter(availability => availability[`${cabin}Available`]).length > 0
 }
 function hasDirectAvailabilityOn(cabin) {
-  return this.availabilities?.filter(availability => availability[`${cabin}Direct`]).length > 0
+  return availabilities.value?.filter(availability => availability[`${cabin}Direct`]).length > 0
 }
 const hasAvailabilities = computed(() => availabilities.value.length > 0)
 </script>
