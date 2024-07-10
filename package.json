@@ -24,6 +24,7 @@
     "itemsjs": "^2.1.25",
     "moment": "^2.30.1",
     "nuxt": "^3.11.2",
+    "nuxt-gtag": "^2.0.6",
     "nuxt-prepare": "^2.1.0",
     "preline": "^2.3.0",
     "vue": "^3.4.27",

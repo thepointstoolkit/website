@@ -5,7 +5,13 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/preline.client.ts',
   ],
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', '@nuxt/eslint'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    'nuxt-icon',
+    '@nuxt/eslint',
+    "nuxt-gtag"
+  ],
   tailwindcss: {
     exposeConfig: true,
     viewer: true,
@@ -21,6 +27,9 @@ export default defineNuxtConfig({
     public: {
       seatsAeroApiPath: process.env.SEATSAERO_API_BASE_URL,
     },
+  },
+  gtag: {
+    id: process.env.GTAG_ID
   },
   eslint: {
     config: {
