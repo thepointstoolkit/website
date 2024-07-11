@@ -31,7 +31,7 @@
               :key="'day-' + month + i + filtersAppliedKey"
             >
               <YearlyCalendarDay
-                v-if="isDayVisible(year, month, i + 1)"
+
                 :filters="getFiltersFor(i + 1, month, year)"
               >
                 {{ i + 1 }}
@@ -73,7 +73,7 @@ defineProps({
     type: String,
   },
 })
-const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+const dayNames = ['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 const filtersAppliedKey = ref(0)
 

@@ -51,8 +51,8 @@ import { computed } from 'vue'
 
 const props = defineProps({
   filters: {
-    type: Array,
-    default: () => [],
+    type: Object,
+    default: () => {},
   },
 })
 const { response, searchConfiguration } = useSeatsAeroCachedSearchApi()

@@ -9,6 +9,7 @@ import {
   isBefore,
   isSameDay,
   getWeeksInMonth,
+  startOfMonth,
 } from 'date-fns'
 
 interface CalendarMonth {
@@ -42,13 +43,15 @@ export const useCalendarData = () => {
     let index = start
 
     while (isBefore(index, end)) {
+      let firstDayOfMonth = startOfMonth(index);
+      let firstDayOfMonthIndex = getDay(firstDayOfMonth)
       calendar.push({
         index: counter++,
         days: getDaysInMonth(index),
         weeks: getWeeksInMonth(index),
         month: getMonth(index),
         year: getYear(index),
-        startIndex: getDay(index),
+        startIndex: firstDayOfMonthIndex,
         monthLabel: format(index, 'MMMM yyyy'),
         yearMonth: format(index, 'yyyy-MM'),
       })
