@@ -1,0 +1,45 @@
+<template>
+  <a :href="seatsLink" target="_blank">
+    <slot />
+  </a>
+</template>
+<script setup>
+import { computed } from 'vue';
+const config = useRuntimeConfig()
+
+const props = defineProps({
+  cabin: {
+    type: String,
+  },
+  date: {
+    type: String,
+  },
+  origin: {
+    type: String,
+  },
+  destination: {
+    type: String,
+  },
+  source: {
+    type: String,
+  },
+  utmMedium: {
+    type: String,
+  }
+})
+const seatsLink = computed(() => {
+  const baseURL = "https://seats.aero/search";
+  const url = new URL(baseURL)
+  const params = new URLSearchParams({
+    applicable_cabin: props.cabin,
+    origins: props.cabin,
+    destinations: props.destination,
+    show_individual: true,
+    sources: props.source,
+    utm_source: config.public.appName,
+    utm_medium: props.utmMedium
+  });
+  url.search = params.toString();
+  return url.toString();
+})
+</script>

@@ -1,9 +1,8 @@
 <template>
-  <div class="flex flex-col overflow-y-auto overflow-clip pr-4"
-    style="height: 300px;">
+  <div
+    class="flex flex-col overflow-y-auto overflow-clip max-h-[300px] min-h-[100px]">
     <div class="-m-1.5 ">
       <div class="p-1.5 min-w-full inline-block align-middle">
-        <!-- <div class="overflow-hidden"> -->
         <table
           class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700 relative">
           <thead class="sticky top-0 bg-gray-50 dark:bg-neutral-700">
@@ -39,7 +38,7 @@
               <td
                 class="px-3 py-2 whitespace-nowrap text-sm text-center text-gray-800 dark:text-neutral-200">
                 {{ availability.OriginAirport }}-{{
-                availability.DestinationAirport
+                  availability.DestinationAirport
                 }}
               </td>
               <td
@@ -49,28 +48,48 @@
                   {{ formatDistanceToNow(availability.UpdatedAt) }} ago</span>
               </td>
               <td class="px-3 py-2 whitespace-nowrap text-sm">
-                <AvailabilityBadge :is-available="availability.YAvailable"
-                  :is-direct="availability.YDirect"
-                  :cost="availability.YDirect ? availability.YDirectMileageCost : availability.YMileageCost"
-                  :seats="availability.YDirect ? availability.YDirectRemainingSeats : availability.YRemainingSeats" />
+                <SeatsAeroSearchLink :utmMedium="toolId"
+                  cabin="economy" :source="availability.Source"
+                  :date="availability.Date" :origin="availability.OriginAirport"
+                  :destination="availability.DestinationAirport">
+                  <AvailabilityBadge :is-available="availability.YAvailable"
+                    :is-direct="availability.YDirect"
+                    :cost="availability.YDirect ? availability.YDirectMileageCost : availability.YMileageCost"
+                    :seats="availability.YDirect ? availability.YDirectRemainingSeats : availability.YRemainingSeats" />
+                </SeatsAeroSearchLink>
               </td>
               <td class="px-3 py-2 whitespace-nowrap text-sm">
-                <AvailabilityBadge :is-available="availability.WAvailable"
-                  :is-direct="availability.WDirect"
-                  :cost="availability.WDirect ? availability.WDirectMileageCost : availability.WMileageCost"
-                  :seats="availability.WDirect ? availability.WDirectRemainingSeats : availability.WRemainingSeats" />
+                <SeatsAeroSearchLink :utmMedium="toolId"
+                  cabin="premium" :source="availability.Source"
+                  :date="availability.Date" :origin="availability.OriginAirport"
+                  :destination="availability.DestinationAirport">
+                  <AvailabilityBadge :is-available="availability.WAvailable"
+                    :is-direct="availability.WDirect"
+                    :cost="availability.WDirect ? availability.WDirectMileageCost : availability.WMileageCost"
+                    :seats="availability.WDirect ? availability.WDirectRemainingSeats : availability.WRemainingSeats" />
+                </SeatsAeroSearchLink>
               </td>
               <td class="px-3 py-2 whitespace-nowrap text-sm">
-                <AvailabilityBadge :is-available="availability.JAvailable"
-                  :is-direct="availability.JDirect"
-                  :cost="availability.JDirect ? availability.JDirectMileageCost : availability.JMileageCost"
-                  :seats="availability.JDirect ? availability.JDirectRemainingSeats : availability.JRemainingSeats" />
+                <SeatsAeroSearchLink :utmMedium="toolId"
+                  cabin="business" :source="availability.Source"
+                  :date="availability.Date" :origin="availability.OriginAirport"
+                  :destination="availability.DestinationAirport">
+                  <AvailabilityBadge :is-available="availability.JAvailable"
+                    :is-direct="availability.JDirect"
+                    :cost="availability.JDirect ? availability.JDirectMileageCost : availability.JMileageCost"
+                    :seats="availability.JDirect ? availability.JDirectRemainingSeats : availability.JRemainingSeats" />
+                </SeatsAeroSearchLink>
               </td>
               <td class="px-3 py-2 whitespace-nowrap text-sm">
-                <AvailabilityBadge :is-available="availability.FAvailable"
-                  :is-direct="availability.FDirect"
-                  :cost="availability.FDirect ? availability.FDirectMileageCost : availability.FMileageCost"
-                  :seats="availability.FDirect ? availability.FDirectRemainingSeats : availability.FRemainingSeats" />
+                <SeatsAeroSearchLink :utmMedium="toolId" cabin="first"
+                  :source="availability.Source" :date="availability.Date"
+                  :origin="availability.OriginAirport"
+                  :destination="availability.DestinationAirport">
+                  <AvailabilityBadge :is-available="availability.FAvailable"
+                    :is-direct="availability.FDirect"
+                    :cost="availability.FDirect ? availability.FDirectMileageCost : availability.FMileageCost"
+                    :seats="availability.FDirect ? availability.FDirectRemainingSeats : availability.FRemainingSeats" />
+                </SeatsAeroSearchLink>
               </td>
             </tr>
           </tbody>
@@ -78,11 +97,19 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 <script setup>
 import { formatDistanceToNow } from 'date-fns'
 
-defineProps({ availabilities: { type: Array, required: true } })
+defineProps({
+  availabilities: {
+    type: Array,
+    required: true
+  },
+  toolId: {
+    type: String,
+    required: true
+  }
+})
 </script>
