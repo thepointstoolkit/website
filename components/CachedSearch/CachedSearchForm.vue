@@ -12,7 +12,7 @@
                 All sources
               </option>
               <option
-                v-for="sourceOption in sourceOptions"
+                v-for="sourceOption in sources"
                 :key="sourceOption.value"
                 :value="sourceOption.value"
               >
@@ -28,6 +28,7 @@
                   class="uppercase"
                   label="Origin"
                   required
+                  :validate="true"
                   :is-valid="!v$.origin.$invalid"
                   help="A list of origin airports. Comma-delimited if multiple, such as &quot;
             SFO,LAX&quot;."
@@ -49,6 +50,7 @@
                   class="uppercase"
                   label="Destination"
                   required
+                  :validate="true"
                   :is-valid="!v$.destination.$invalid"
                   help="A list of destination airports. Comma-delimited if multiple, such as
             &quot;FRA,LHR&quot;."
@@ -84,7 +86,7 @@
                   All cabins
                 </option>
                 <option
-                  v-for="cabinOption in cabinOptions"
+                  v-for="cabinOption in cabins"
                   :key="cabinOption.code"
                   :value="cabinOption.value"
                 >
@@ -101,14 +103,8 @@
             title="⚠️ Broad search"
           >
             <p>
-              Not
-              setting
-              any
-              additional criterias can lead into a broad search.
-            </p>
-            <p>
-              Which
-              may consume a lot of API credits and freeze your browser.
+              Your search criterias may lead into a broad search, which may
+              consume a lot of API credits and freeze your browser.
             </p>
           </Alert>
           <BButtonSolid
@@ -146,10 +142,9 @@
 <script setup>
 import { required } from '@vuelidate/validators'
 import { useVuelidate } from '@vuelidate/core'
-import { reactive } from 'vue'
+import { computed, reactive } from 'vue'
 import { useSeatsAeroCachedSearchApi } from '@/composables/useSeatsAeroCachedSearchApi'
-import cabins from '~/data/cabins.json'
-import sources from '~/data/sources.json'
+import { cabins, sources, multicodeAirports } from '@/data'
 
 const { isLoading, start, finish } = useLoadingIndicator()
 defineProps({
@@ -223,14 +218,20 @@ function swapDestinations() {
   formData.origin = destination
   formData.destination = origin
 }
-
-const cabinOptions = computed(() => cabins)
-const sourceOptions = computed(() => sources)
+const origins = computed(() => formData.origin.split(','))
+const destinations = computed(() => formData.destination.split(','))
 
 const broadSearch = computed(() => {
   if (formData.cabin === '' && (formData.startDate === '' || formData.endDate === '') && formData.source === '') {
     return true
   }
+
+  const multiCodeOrigin = origins.value.some(origin => multicodeAirports.includes(origin))
+  const multiCodeDestination = destinations.value.some(destination => multicodeAirports.includes(destination))
+  if (multiCodeDestination || multiCodeOrigin) {
+    return true
+  }
+
   return false
 })
 

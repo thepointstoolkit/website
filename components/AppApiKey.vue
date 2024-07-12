@@ -76,7 +76,6 @@ const showMissingApiKeyWarning = function () {
   warningNotificationId.value = notification.id
 }
 const hideMissingApiKeyWarning = function () {
-  console.log('hide:' + warningNotificationId.value)
   notificationStore.removeNotification(warningNotificationId.value)
 }
 </script>

@@ -32,7 +32,6 @@ export const useNotificationStore = defineStore('notifications', {
       return notification
     },
     removeNotification(id: number) {
-      console.log({ id })
       this.notifications = this.notifications.filter(msg => msg.id !== id)
     },
   },

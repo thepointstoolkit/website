@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import { isPast, format } from 'date-fns'
+import { format } from 'date-fns'
 import { useSeatsAeroCachedSearchApi } from '@/composables/useSeatsAeroCachedSearchApi'
 
 const { searchFilters } = useSeatsAeroCachedSearchApi()

@@ -11,19 +11,19 @@ export const useSeatsAeroCachedSearchApi = () => {
     aggregations: {
       Source: {
         title: 'Source',
-        size: 20,
+        size: 30,
         conjunction: true,
         hide_zero_doc_count: true,
       },
       OriginAirport: {
         title: 'Origin Airport',
-        size: 10,
+        size: 100,
         conjunction: true,
         hide_zero_doc_count: true,
       },
       DestinationAirport: {
         title: 'Destination Airport',
-        size: 10,
+        size: 100,
         conjunction: true,
         hide_zero_doc_count: true,
       },
@@ -41,13 +41,13 @@ export const useSeatsAeroCachedSearchApi = () => {
       },
       Month: {
         title: 'Month',
-        size: 10,
+        size: 12,
         conjunction: true,
         hide_zero_doc_count: true,
       },
       Date: {
         title: 'Date',
-        size: 10,
+        size: 365,
         conjunction: true,
         hide_zero_doc_count: true,
       },
