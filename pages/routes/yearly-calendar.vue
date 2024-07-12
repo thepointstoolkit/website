@@ -1,8 +1,6 @@
 <template>
   <div class="flex flex-col sm:flex-row gap-5">
-    <Card class="w-full sm:w-[360px] p-3">
-      <CachedSearchForm v-model="formData" />
-    </Card>
+    <CachedSearchForm v-model="formData" />
     <div>
       <YearlyCalendar
         :start-date="formData?.startDate"

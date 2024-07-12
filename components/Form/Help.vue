@@ -2,6 +2,7 @@
   <div class="col-start-2 text-center">
     <div class="hs-tooltip inline-block">
       <button
+        tabindex="-1"
         type="button"
         class="hs-tooltip-toggle  inline-flex justify-center items-center gap-2 rounded-full text-gray-400 hover:border-blue-200 hover:text-blue-600 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-white/10 dark:hover:border-white/10 dark:hover:text-white"
       >

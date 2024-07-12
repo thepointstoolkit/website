@@ -1,27 +1,38 @@
 <template>
   <div
-    class="w-90 flex flex-col bg-white border shadow-lg rounded-xl overflow-hidden dark:bg-neutral-900 dark:border-neutral-700">
+    class="w-90 flex flex-col bg-white border shadow-lg rounded-xl overflow-hidden dark:bg-neutral-900 dark:border-neutral-700"
+  >
     <div class="p-3">
       <div class="flex flex-col w-fit">
         <div class="flex-initial">
           <div
-            class=" text-center font-medium  text-gray-800 dark:text-neutral-200  pb-1.5">
+            class=" text-center font-medium  text-gray-800 dark:text-neutral-200  pb-1.5"
+          >
             {{ monthLabel }}
           </div>
           <div class="grid grid-cols-7 pb-1.5">
-            <span v-for="dayName in dayNames" :key="'day-name-' + dayName"
-              class="m-px w-10 block text-center text-sm text-gray-500 dark:text-neutral-500">
+            <span
+              v-for="dayName in dayNames"
+              :key="'day-name-' + dayName"
+              class="m-px w-10 block text-center text-sm text-gray-500 dark:text-neutral-500"
+            >
               {{ dayName }}
             </span>
           </div>
         </div>
         <div class="flex-initial">
           <div class="grid grid-cols-7">
-            <div v-for="_, i in startIndex" :key="'disabled-' + i" />
-            <template v-for="_, i in days"
-              :key="'day-' + month + i + filtersAppliedKey">
+            <div
+              v-for="_, i in startIndex"
+              :key="'disabled-' + i"
+            />
+            <template
+              v-for="_, i in days"
+              :key="'day-' + month + i + filtersAppliedKey"
+            >
               <YearlyCalendarDay
-                :filters="getFiltersFor(i + 1, month, year)">
+                :filters="getFiltersFor(i + 1, month, year)"
+              >
                 {{ i + 1 }}
               </YearlyCalendarDay>
             </template>

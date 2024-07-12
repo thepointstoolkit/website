@@ -1,6 +1,6 @@
 <template>
   <span
-    class="inline-flex items-center gap-x-1.5 py-1 px-1.5 rounded-full text-xs font-medium"
+    class="py-1 px-1.5 rounded-full text-xs"
     :class="[colorClasses]"
   >
     <template v-if="isAvailable">

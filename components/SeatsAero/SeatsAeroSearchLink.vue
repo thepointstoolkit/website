@@ -1,7 +1,9 @@
 <template>
   <a
     :href="seatsLink"
+    class="hover:underline font-medium hover:font-bold"
     target="_blank"
+    title="Check live availability on seats.aero"
   >
     <slot />
   </a>
@@ -42,8 +44,8 @@ const seatsLink = computed(() => {
     show_individual: true,
     sources: props.source,
     date: props.date,
-    additional_days_num:1,
-    max_fees:40000,
+    additional_days_num: 1,
+    max_fees: 40000,
     utm_source: config.public.appName,
     utm_medium: props.utmMedium,
   })
