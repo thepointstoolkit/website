@@ -19,8 +19,8 @@
         </FormSelect>
       </div>
       <div class="mt-6 grid gap-4 lg:gap-6">
-        <div class="flex flex-col sm:flex-row items-end">
-          <div class="flex-1">
+        <div class="flex flex-row items-end">
+          <div class="sm:flex-1">
             <FormInput
               v-model="formData.origin"
               class="uppercase"
@@ -41,7 +41,7 @@
               size="2em"
             />
           </div>
-          <div class="flex-1">
+          <div class="sm:flex-1">
             <FormInput
               v-model="formData.destination"
               class="uppercase"
@@ -56,7 +56,7 @@
         </div>
         <div
           v-if="showDates"
-          class="flex flex-col sm:flex-row items-end gap-4"
+          class="flex flex-row items-end gap-4"
         >
           <div class="flex-1">
             <FormInput

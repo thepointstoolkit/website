@@ -18,9 +18,10 @@
     </CardLinkList>
   </div>
 </template>
+
 <script setup lang="ts">
 useSeoMeta({
   title: 'API Playground - Seats.aero Labs',
-  description: 'Test the Seats.aero API endpoints and view raw response data in our interactive API Playground.Perfect for developers to experiment and integrate seamlessly.'
+  description: 'Test the Seats.aero API endpoints and view raw response data in our interactive API Playground.Perfect for developers to experiment and integrate seamlessly.',
 })
 </script>

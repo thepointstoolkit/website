@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex flex-col sm:flex-row">
     <Dropdown>
       <DropdownTrigger>
         Routes

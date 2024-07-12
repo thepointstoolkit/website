@@ -25,7 +25,6 @@ const availabilities = computed(() => {
 })
 useSeoMeta({
   title: 'Cached Search - Seats.aero Labs',
-  description: 'Search for availability between specific airports within specific date ranges across all mileage programs.'
+  description: 'Search for availability between specific airports within specific date ranges across all mileage programs.',
 })
-
 </script>

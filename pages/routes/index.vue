@@ -18,9 +18,10 @@
     </CardLinkList>
   </div>
 </template>
+
 <script setup lang="ts">
 useSeoMeta({
   title: 'Routes - Seats.aero Labs',
-  description: 'Explore various visualizations for a specific route with our comprehensive set of tools. Gain insights and plan your travel efficiently.'
+  description: 'Explore various visualizations for a specific route with our comprehensive set of tools. Gain insights and plan your travel efficiently.',
 })
 </script>

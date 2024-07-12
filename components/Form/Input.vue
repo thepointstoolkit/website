@@ -97,9 +97,9 @@ const floatingLabelClasses = computed(() => {
   return 'peer placeholder:text-transparent focus:pt-6 focus:pb-2 [&:not(:placeholder-shown)]:pt-6 [&:not(:placeholder-shown)]:pb-2 autofill:pt-6 autofill:pb-2'
 })
 const validationClasses = computed(() => {
-  const {isValid,validate} = props
-  if(!validate) {
-    return ""
+  const { isValid, validate } = props
+  if (!validate) {
+    return ''
   }
 
   if (isValid == true) {

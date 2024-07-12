@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-icon',
     '@nuxt/eslint',
-    "nuxt-gtag"
+    'nuxt-gtag',
   ],
   tailwindcss: {
     exposeConfig: true,
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     },
   },
   gtag: {
-    id: process.env.GTAG_ID
+    id: process.env.GTAG_ID,
   },
   eslint: {
     config: {

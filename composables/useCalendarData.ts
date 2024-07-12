@@ -44,8 +44,8 @@ export const useCalendarData = () => {
     let index = startOfMonth(start)
 
     while (isBefore(index, endOfMonth(end))) {
-      let firstDayOfMonth = startOfMonth(index);
-      let firstDayOfMonthIndex = getDay(firstDayOfMonth)
+      const firstDayOfMonth = startOfMonth(index)
+      const firstDayOfMonthIndex = getDay(firstDayOfMonth)
       calendar.push({
         index: counter++,
         days: getDaysInMonth(index),

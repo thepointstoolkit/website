@@ -5,10 +5,12 @@
     </p>
     <div
       class="flex w-full h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700"
-      role="progressbar">
+      role="progressbar"
+    >
       <div
         class="flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500"
-        :style="{ width: rateLimitPercentage + '%' }" />
+        :style="{ width: rateLimitPercentage + '%' }"
+      />
     </div>
     <span class="text-sm text-gray-800 dark:text-white">
       {{ rateLimitUsed }}/{{ rateLimitLimit }}

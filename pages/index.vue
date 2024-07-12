@@ -32,4 +32,3 @@
     </CardLink>
   </CardLinkList>
 </template>
-

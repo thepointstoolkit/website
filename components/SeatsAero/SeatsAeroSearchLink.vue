@@ -1,10 +1,15 @@
 <template>
-  <a :href="seatsLink" target="_blank">
+  <a
+    :href="seatsLink"
+    target="_blank"
+  >
     <slot />
   </a>
 </template>
+
 <script setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
+
 const config = useRuntimeConfig()
 
 const props = defineProps({
@@ -25,10 +30,10 @@ const props = defineProps({
   },
   utmMedium: {
     type: String,
-  }
+  },
 })
 const seatsLink = computed(() => {
-  const baseURL = "https://seats.aero/search";
+  const baseURL = 'https://seats.aero/search'
   const url = new URL(baseURL)
   const params = new URLSearchParams({
     applicable_cabin: props.cabin,
@@ -37,9 +42,9 @@ const seatsLink = computed(() => {
     show_individual: true,
     sources: props.source,
     utm_source: config.public.appName,
-    utm_medium: props.utmMedium
-  });
-  url.search = params.toString();
-  return url.toString();
+    utm_medium: props.utmMedium,
+  })
+  url.search = params.toString()
+  return url.toString()
 })
 </script>

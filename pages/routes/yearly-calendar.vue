@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-row gap-5">
-    <Card class=" w-[360px] p-3">
+  <div class="flex flex-col sm:flex-row gap-5">
+    <Card class="w-full sm:w-[360px] p-3">
       <CachedSearchForm v-model="formData" />
     </Card>
     <div>
@@ -17,6 +17,6 @@ const formData = ref({})
 
 useSeoMeta({
   title: 'Yearly Calendar - Seats.aero Labs',
-  description: 'Discover a yearly calendar of availability for your desired route. Plan your travels with ease by viewing all available dates at a glance.'
+  description: 'Discover a yearly calendar of availability for your desired route. Plan your travels with ease by viewing all available dates at a glance.',
 })
 </script>

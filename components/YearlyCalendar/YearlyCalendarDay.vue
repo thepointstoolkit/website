@@ -39,7 +39,10 @@
         </div>
       </div>
       <PopoverContent v-show="hasAvailabilities">
-        <AvailabilityList :availabilities="availabilities" toolId="YearlyCalendar" />
+        <AvailabilityList
+          :availabilities="availabilities"
+          tool-id="YearlyCalendar"
+        />
       </PopoverContent>
     </div>
   </div>

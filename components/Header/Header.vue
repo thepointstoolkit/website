@@ -72,7 +72,7 @@
         class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
       >
         <div
-          class="flex flex-col sm:flex-row sm:items-center py-2 md:py-0 sm:ps-7"
+          class="flex flex-col sm:flex-row sm:items-center py-2 md:py-0 sm:ps-7 divide-y divide-solid sm:divide-y-0"
         >
           <slot name="navigation" />
         </div>
