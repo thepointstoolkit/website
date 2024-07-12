@@ -37,10 +37,13 @@ const seatsLink = computed(() => {
   const url = new URL(baseURL)
   const params = new URLSearchParams({
     applicable_cabin: props.cabin,
-    origins: props.cabin,
+    origins: props.origin,
     destinations: props.destination,
     show_individual: true,
     sources: props.source,
+    date: props.date,
+    additional_days_num:1,
+    max_fees:40000,
     utm_source: config.public.appName,
     utm_medium: props.utmMedium,
   })
