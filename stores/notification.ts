@@ -16,7 +16,7 @@ export const useNotificationStore = defineStore('notifications', {
   actions: {
     addNotification(title: string, message: string, type: string, duration: number = 0) {
       const notification = {
-        id: this.nextId++,
+        id: this.nextId,
         title,
         message,
         type,
@@ -28,8 +28,11 @@ export const useNotificationStore = defineStore('notifications', {
           this.removeNotification(notification.id)
         }, duration)
       }
+      this.nextId++
+      return notification
     },
     removeNotification(id: number) {
+      console.log({id})
       this.notifications = this.notifications.filter(msg => msg.id !== id)
     },
   },

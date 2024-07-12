@@ -1,12 +1,7 @@
 <template>
-  <Alert
-    v-for="notification in notifications"
-    :key="notification.id"
-    :type="notification.type"
-    :title="notification.title"
-    class="my-5"
-  >
-    <p>{{ notification.message }}</p>
+  <Alert v-for="notification in notifications" :key="notification.id"
+    :type="notification.type" :title="notification.title" class="my-5">
+    <p v-html="notification.message"/>
   </Alert>
 </template>
 
