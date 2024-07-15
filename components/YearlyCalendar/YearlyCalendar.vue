@@ -27,9 +27,10 @@
 
 <script setup>
 import { format } from 'date-fns'
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useCalendarData } from '@/composables/useCalendarData'
 import { useSeatsAeroCachedSearchApi } from '@/composables/useSeatsAeroCachedSearchApi'
+const { gtag } = useGtag()
 
 const { createCalendar } = useCalendarData()
 const props = defineProps({
@@ -48,4 +49,13 @@ const calendarMonths = computed(() => {
 })
 const { response } = useSeatsAeroCachedSearchApi()
 const hasResponse = computed(() => response.value.length > 0)
+
+watch(response, function(){
+  useTrackEvent('tool_used', {
+    tool_name: 'Yearly Calendar',
+  })
+})
+
+
+
 </script>
