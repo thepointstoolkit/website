@@ -5,7 +5,7 @@
         <BreadcrumbLink
           property="item"
           typeof="WebPage"
-          to="/"
+          :to="localePath('/')"
         >
           <span property="name">
             <Icon name="tabler:home" />
@@ -43,6 +43,9 @@
 <script setup>
 import BreadcrumbItem from './Breadcrumb/BreadcrumbItem.vue'
 
+const { locale } = useI18n()
+const localePath = useLocalePath()
+
 const route = useRoute()
 const router = useRouter()
 const crumbs = computed(() => {
@@ -51,10 +54,15 @@ const crumbs = computed(() => {
     ? fullPath.substring(1).split('/')
     : fullPath.split('/')
   const crumbs = []
+
+  if (params[0] == locale.value) {
+    delete params[0]
+  }
+
   let path = ''
   params.forEach((param, _) => {
     path = `${path}/${param}`
-    const match = router.resolve(path)
+    const match = router.resolve(localePath(path))
     if (match.name !== null) {
       crumbs.push({
         title: param.replace(/-/g, ' '),

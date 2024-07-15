@@ -6,10 +6,10 @@
           <div>
             <FormSelect
               v-model="formData.source"
-              label="Source"
+              :label="$t('cached_search_form.labels.source')"
             >
               <option value="">
-                All sources
+                {{ $t('cached_search_form.strings.all_sources') }}
               </option>
               <option
                 v-for="sourceOption in sources"
@@ -26,12 +26,11 @@
                 <FormInput
                   v-model="formData.origin"
                   class="uppercase"
-                  label="Origin"
+                  :label="$t('cached_search_form.labels.origin')"
                   required
                   :validate="true"
                   :is-valid="!v$.origin.$invalid"
-                  help="A list of origin airports. Comma-delimited if multiple, such as &quot;
-            SFO,LAX&quot;."
+                  :help="$t('cached_search_form.help.origin')"
                   @change="v$.origin.$touch"
                 />
               </div>
@@ -48,12 +47,11 @@
                 <FormInput
                   v-model="formData.destination"
                   class="uppercase"
-                  label="Destination"
+                  :label="$t('cached_search_form.labels.destination')"
                   required
                   :validate="true"
                   :is-valid="!v$.destination.$invalid"
-                  help="A list of destination airports. Comma-delimited if multiple, such as
-            &quot;FRA,LHR&quot;."
+                  :help="$t('cached_search_form.help.destination')"
                   @change="v$.destination.$touch"
                 />
               </div>
@@ -66,32 +64,31 @@
                 <FormInput
                   v-model="formData.startDate"
                   type="date"
-                  label="Start Date"
+                  :label="$t('cached_search_form.labels.start_date')"
                 />
               </div>
               <div class="flex-1">
                 <FormInput
                   v-model="formData.endDate"
                   type="date"
-                  label="End Date"
+                  :label="$t('cached_search_form.labels.end_date')"
                 />
               </div>
             </div>
             <div>
               <FormSelect
                 v-model="formData.cabin"
-                label="Cabin"
+                :label="$t('cached_search_form.labels.cabin')"
               >
                 <option value="">
-                  All cabins
+                  {{ $t('cached_search_form.strings.all_cabins') }}
                 </option>
                 <option
                   v-for="cabinOption in cabins"
                   :key="cabinOption.code"
                   :value="cabinOption.value"
                 >
-                  {{
-                    cabinOption.name }}
+                  {{ $t('cabins.'+cabinOption.value) }}
                 </option>
               </FormSelect>
             </div>
@@ -100,11 +97,10 @@
             v-show="broadSearch"
             class="my-2 text-sm"
             type="warning"
-            title="⚠️ Broad search"
+            :title="'⚠️ ' + $t('cached_search_form.broad_search.title')"
           >
             <p>
-              Your search criterias may lead into a broad search, which may
-              consume a lot of API credits and freeze your browser.
+              {{ $t("cached_search_form.broad_search.msg") }}
             </p>
           </Alert>
           <BButtonSolid
@@ -112,7 +108,7 @@
             type="submit"
             class="w-full justify-center mt-3"
           >
-            Search
+            {{ $t('buttons.search') }}
           </BButtonSolid>
         </form>
 
@@ -127,9 +123,9 @@
             <div
               class="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full dark:text-blue-500"
               role="status"
-              aria-label="loading"
+              :aria-label="$t('strings.loading')"
             >
-              <span class="sr-only">Loading...</span>
+              <span class="sr-only">{{ $t('strings.loading') }}...</span>
             </div>
           </div>
         </div>

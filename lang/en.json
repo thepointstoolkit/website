@@ -1,0 +1,69 @@
+{
+  "lang": {
+    "en": "English",
+    "pt": "Português"
+  },
+  "menu": {
+    "yearly_calendar": "Yearly Calendar",
+    "routes": "Routes",
+    "api_playground": "API Playground",
+    "cached_search": "Cached Search"
+  },
+  "buttons": {
+    "search": "Search"
+  },
+  "filters": {
+    "Source": "Source",
+    "Origin Airport": "Origin Airport",
+    "Destination Airport": "Destination Airport",
+    "Origin Region": "Origin Region",
+    "Destination Region": "Destination Region",
+    "Month": "Month",
+    "Date": "Date"
+  },
+  "cabins": {
+    "first": "First",
+    "business": "Business",
+    "premium": "Premium",
+    "economy": "Economy"
+  },
+  "strings": {
+    "loading": "Loading",
+    "here": "here",
+    "not_affiliated": "Not affiliated with Seats.aero"
+  },
+  "cached_search_form": {
+    "broad_search": {
+      "title": "Broad search",
+      "msg": "Your search criterias may lead into a broad search, which may consume a lot of API credits and freeze your browser."
+    },
+    "help": {
+      "origin": "A list of origin airports. Comma-delimited if multiple, such as 'SFO,LAX'",
+      "destination": "A list of origin airports. Comma-delimited if multiple, such as 'FRA,LHR'"
+    },
+    "strings": {
+      "all_sources": "All Sources",
+      "all_cabins": "All Cabins",
+    },
+    "labels": {
+      "source": "Source",
+      "origin": "Origin",
+      "destination": "Destination",
+      "start_date": "Start Date",
+      "end_date": "End Date",
+      "cabin": "Cabin"
+    }
+  },
+  "api_usage": {
+    "strings": {
+      "title": "API Usage"
+    },
+    "labels": {
+      "api_key": "Seats.aero API Key"
+    }
+  },
+  "api_key_warning": {
+    "title": "Missing Seats.aero API Key",
+    "msg": "Before using this tool you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key",
+  }
+}

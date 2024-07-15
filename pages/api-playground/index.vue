@@ -1,12 +1,11 @@
 <template>
   <div>
     <CardLinkList>
-      <CardLink to="/api-playground/cached-search">
+      <CardLink :to="localePath('/api-playground/cached-search')">
         <template #title>
-          Cached Search
+          {{ t('cache_search.title') }}
         </template>
-        Search for availability between specific airports within
-        specific date ranges across all mileage programs.
+        {{ t('cache_search.description') }}
         <template #leading>
           <Icon
             name="tabler:map-search"
@@ -20,8 +19,38 @@
 </template>
 
 <script setup lang="ts">
+const localePath = useLocalePath()
+const { t } = useI18n({
+  useScope: 'local',
+})
+
 useSeoMeta({
-  title: 'API Playground - Seats.aero Labs',
-  description: 'Test the Seats.aero API endpoints and view raw response data in our interactive API Playground.Perfect for developers to experiment and integrate seamlessly.',
+  title: t('seo.title'),
+  description: t('seo.description'),
 })
 </script>
+
+<i18n lang="json">
+{
+  "en": {
+    "seo": {
+      "title": "API Playground",
+      "description": "Test the Seats.aero API endpoints and view raw response data in our interactive API Playground.Perfect for developers to experiment and integrate seamlessly.",
+    },
+    "cache_search": {
+      "title": "Cached Search",
+      "description": "Search for availability between specific airports within specific date ranges across all mileage programs."
+    }
+  },
+  "pt": {
+    "seo": {
+      "title": "API Playground",
+      "description": "Teste os endpoints da API Seats.aero e visualize dados de resposta brutos em nosso Playground de API interativo. Perfeito para desenvolvedores experimentarem e integrarem de forma perfeita."
+    },
+    "cache_search": {
+      "title": "Cached Search",
+      "description": "Pesquise disponibilidade entre aeroportos específicos dentro de intervalos de datas específicos em todos os programas de milhagem."
+    }
+  }
+}
+</i18n>

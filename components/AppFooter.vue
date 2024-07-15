@@ -1,3 +1,4 @@
+import AppLanguageSelector from './AppLanguageSelector.vue';
 <template>
   <footer
     class="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto"
@@ -9,14 +10,13 @@
             <p
               class="inline-flex gap-x-2 text-gray-600  dark:text-neutral-400 "
             >
-              Not affiliated with Seats.aero
+              {{ $t("strings.not_affiliated") }}
             </p>
           </div>
         </div>
-        <div class="flex justify-between items-center">
-          <div class="space-x-4">
-            <AppThemeSwitcher />
-          </div>
+        <div class="flex justify-between items-center space-x-4">
+          <AppThemeSwitcher />
+          <AppLanguageSelector />
         </div>
       </div>
     </div>

@@ -1,0 +1,69 @@
+{
+  "lang": {
+    "en": "English",
+    "pt": "Português"
+  },
+  "menu": {
+    "yearly_calendar": "Calendário Anual",
+    "routes": "Rotas",
+    "api_playground": "API Playground",
+    "cached_search": "Cached Search"
+  },
+  "buttons": {
+    "search": "Buscar"
+  },
+  "filters": {
+    "Source": "Programa",
+    "Origin Airport": "Aeroporto de Origem",
+    "Destination Airport": "Aeroporto de Destino",
+    "Origin Region": "Região de Origem",
+    "Destination Region": "Região de Destino",
+    "Month": "Mês",
+    "Date": "Data"
+  },
+  "cabins": {
+    "first": "Primeira Classe",
+    "business": "Executiva",
+    "premium": "Premium Economy",
+    "economy": "Economica"
+  },
+  "strings": {
+    "loading": "Carregando",
+    "here": "aqui",
+    "not_affiliated": "Não afiliado ao Seats.aero"
+  },
+  "cached_search_form": {
+    "broad_search": {
+      "title": "Busca ampla",
+      "msg": "Seus critérios de busca podem levar a uma busca ampla, que pode consumir muitos créditos da API e travar seu navegador."
+    },
+    "help": {
+      "origin": "Uma lista de aeroportos de origem. Separados por vírgulas se houver múltiplos, como 'GRU,GIG'",
+      "destination": "Uma lista de aeroportos de destino. Separados por vírgulas se houver múltiplos, como 'EWR,JFK'"
+    },
+    "strings": {
+      "all_sources": "Todas os Programas",
+      "all_cabins": "Todas as Cabines",
+    },
+    "labels": {
+      "source": "Programa",
+      "origin": "Origem",
+      "destination": "Destino",
+      "start_date": "Data de Início",
+      "end_date": "Data de Término",
+      "cabin": "Cabine"
+    }
+  },
+  "api_usage": {
+    "strings": {
+      "title": "Consumo API"
+    },
+    "labels": {
+      "api_key": "Chave API do Seats.aero"
+    }
+  },
+  "api_key_warning": {
+    "title": "Chave API  Seats.aero ausente",
+    "msg": "Antes de usar esta ferramenta, você precisa configurar sua chave API do Seats.aero, localizada no menu deste site. Você pode obter sua chave API do Seats.aero"
+  }
+}

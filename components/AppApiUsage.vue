@@ -1,7 +1,7 @@
 <template>
   <div class="mb-2 flex justify-between items-center flex-col gap-1">
     <p class="text-sm font-semibold text-gray-800 dark:text-white">
-      API Usage
+      {{ $t("api_usage.strings.title") }}
     </p>
     <div
       class="flex w-full h-2 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700"

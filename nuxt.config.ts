@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt/config'
+import { i18n } from './config'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -11,6 +12,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/eslint',
     'nuxt-gtag',
+    '@nuxtjs/i18n',
   ],
   tailwindcss: {
     exposeConfig: true,
@@ -27,11 +29,15 @@ export default defineNuxtConfig({
     public: {
       seatsAeroApiPath: process.env.SEATSAERO_API_BASE_URL,
       appName: process.env.APP_NAME,
+      i18n: {
+        baseUrl: process.env.APP_URL,
+      },
     },
   },
   gtag: {
     id: process.env.GTAG_ID,
   },
+  i18n,
   eslint: {
     config: {
       stylistic: true,

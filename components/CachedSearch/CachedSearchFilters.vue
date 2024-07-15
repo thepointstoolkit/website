@@ -9,7 +9,7 @@
         :key="facet"
       >
         <h5 class="text-lg font-bold text-gray-800 dark:text-white my-2">
-          {{ facet.title }}
+          {{ $t(`filters.${facet.title}`) }}
         </h5>
         <template
           v-for="bucket in facet.buckets"

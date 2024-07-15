@@ -4,7 +4,7 @@
       id="apiKey"
       v-model="apiKey"
       class="ps-11 pe-9"
-      label="Seats.aero API Key"
+      :label="$t('api_usage.labels.api_key')"
       :floating-label="true"
       label-classes="ps-11"
       placeholder="*********"
@@ -41,41 +41,13 @@
 
 <script setup>
 import { storeToRefs } from 'pinia'
-import { onMounted, watch } from 'vue'
-import { useNotificationStore } from '@/stores/notification'
+import { watch } from 'vue'
 
 const store = useSeatsAeroApiStore()
-const { setApiKey } = store // have all non reactiave stuff here
+const { setApiKey } = store
 const { apiKey } = storeToRefs(store)
-const notificationStore = useNotificationStore()
-const warningNotificationId = ref('')
 
 watch(apiKey, async (newValue) => {
   setApiKey(newValue)
-  if (newValue == '') {
-    showMissingApiKeyWarning()
-  }
-  else {
-    hideMissingApiKeyWarning()
-  }
 })
-onMounted(() => {
-  if (!apiKey.value) {
-    showMissingApiKeyWarning()
-  }
-  else {
-    hideMissingApiKeyWarning()
-  }
-})
-const showMissingApiKeyWarning = function () {
-  const notification = notificationStore.addNotification(
-    'Missing Seats.aero API Key',
-    'Before using this website you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key <a href=\'https://seats.aero/apikey\' target=\'_blank\' class=\'inline-flex items-center gap-x-1 text-sm decoration-2 hover:underline font-bold\'>here</a>.',
-    'error',
-  )
-  warningNotificationId.value = notification.id
-}
-const hideMissingApiKeyWarning = function () {
-  notificationStore.removeNotification(warningNotificationId.value)
-}
 </script>
