@@ -14,10 +14,10 @@
   },
   "filters": {
     "Source": "Programa",
-    "Origin Airport": "Aeroporto de Origem",
-    "Destination Airport": "Aeroporto de Destino",
-    "Origin Region": "Região de Origem",
-    "Destination Region": "Região de Destino",
+    "OriginAirport": "Aeroporto de Origem",
+    "DestinationAirport": "Aeroporto de Destino",
+    "OriginRegion": "Região de Origem",
+    "DestinationRegion": "Região de Destino",
     "Month": "Mês",
     "Date": "Data"
   },
