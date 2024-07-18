@@ -62,8 +62,14 @@
       "api_key": "Seats.aero API Key"
     }
   },
-  "api_key_warning": {
-    "title": "Missing Seats.aero API Key",
-    "msg": "Before using this tool you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key",
+  "alerts": {
+    "api_key_warning": {
+      "title": "Missing Seats.aero API Key",
+      "msg": "Before using this tool you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key",
+    },
+    "filters_in_sidebar": {
+      "title": "Filter Results",
+      "msg": "Filters are located in the sidebar. Click the \"Sidebar\" button above to toggle it."
+    }
   }
 }

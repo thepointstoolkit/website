@@ -4,6 +4,7 @@
     :key="notification.id"
     :type="notification.type"
     :title="notification.title"
+    :id="`notification-${notification.id}`"
     class="my-5"
   >
     <p v-html="notification.message" />

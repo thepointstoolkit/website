@@ -1,16 +1,9 @@
 <template>
-  <Alert
-    v-show="isVisible"
-    :title="$t('api_key_warning.title')"
-    type="error"
-    class="my-5"
-  >
-    {{ $t("api_key_warning.msg") }}
-    <a
-      href="https://seats.aero/apikey"
-      target="_blank"
-      class="inline-flex items-center gap-x-1 text-sm decoration-2 hover:underline font-bold"
-    >
+  <Alert v-show="isVisible" :title="$t('alerts.api_key_warning.title')"
+    type="error" class="my-5" id="missing-api-api-alert">
+    {{ $t("alerts.api_key_warning.msg") }}
+    <a href="https://seats.aero/apikey" target="_blank"
+      class="inline-flex items-center gap-x-1 text-sm decoration-2 hover:underline font-bold">
       {{ $t("strings.here") }}
     </a>.
   </Alert>
