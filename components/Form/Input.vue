@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="w-max-full">
     <div class="flex gap-2 items-center">
       <label
         v-if="label && !floatingLabel"

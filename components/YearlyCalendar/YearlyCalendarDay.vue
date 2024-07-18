@@ -1,7 +1,7 @@
 <template>
-  <div class="hs-tooltip [--trigger:click] [--trigger:hover] [--placement:top]">
+  <div class="hs-tooltip [--trigger:click] lg:[--trigger:hover]">
     <div class="hs-tooltip-toggle">
-      <div class="relative size-10 m-2 cursor-pointer">
+      <div class="relative size-10 m-2 cursor-pointer z-0">
         <svg
           class="size-full"
           width="36"

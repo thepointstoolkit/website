@@ -10,16 +10,20 @@
     "cached_search": "Cached Search"
   },
   "buttons": {
-    "search": "Search"
+    "search": "Search",
+    "sidebar": "Sidebar"
   },
   "filters": {
     "Source": "Source",
-    "Origin Airport": "Origin Airport",
-    "Destination Airport": "Destination Airport",
-    "Origin Region": "Origin Region",
-    "Destination Region": "Destination Region",
+    "OriginAirport": "Origin Airport",
+    "DestinationAirport": "Destination Airport",
+    "OriginRegion": "Origin Region",
+    "DestinationRegion": "Destination Region",
     "Month": "Month",
-    "Date": "Date"
+    "Date": "Date",
+    "Cabins": "Cabins",
+    "HasDirectFlight": "Only Direct",
+    "DirectCabins": "Direct Cabins"
   },
   "cabins": {
     "first": "First",
@@ -66,10 +70,6 @@
     "api_key_warning": {
       "title": "Missing Seats.aero API Key",
       "msg": "Before using this tool you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key",
-    },
-    "filters_in_sidebar": {
-      "title": "Filter Results",
-      "msg": "Filters are located in the sidebar. Click the \"Sidebar\" button above to toggle it."
     }
   }
 }

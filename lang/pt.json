@@ -62,8 +62,11 @@
       "api_key": "Chave API do Seats.aero"
     }
   },
-  "api_key_warning": {
-    "title": "Chave API  Seats.aero ausente",
-    "msg": "Antes de usar esta ferramenta, você precisa configurar sua chave API do Seats.aero, localizada no menu deste site. Você pode obter sua chave API do Seats.aero"
+
+  "alerts": {
+    "api_key_warning": {
+      "title": "Chave API  Seats.aero ausente",
+      "msg": "Antes de usar esta ferramenta, você precisa configurar sua chave API do Seats.aero, localizada no menu deste site. Você pode obter sua chave API do Seats.aero"
+    }
   }
 }

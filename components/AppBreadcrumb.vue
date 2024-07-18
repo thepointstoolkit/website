@@ -1,43 +1,19 @@
 <template>
-  <div :class="route.fullPath !== '/' ? 'my-5' : 'my-16'">
     <Breadcrumb v-if="route.fullPath !== '/'">
-      <BreadcrumbItem>
-        <BreadcrumbLink
-          property="item"
-          typeof="WebPage"
-          :to="localePath('/')"
-        >
-          <span property="name">
-            <Icon name="tabler:home" />
+      <template v-for="(crumb, index) in crumbs" :key="index">
+        <BreadcrumbItem>
+          <BreadcrumbLink :to="crumb.path" class="capitalize"
+            v-if="index < crumbs.length - 1">
+            {{ crumb.title }}
+          </BreadcrumbLink>
+          <span v-else class="font-semibold capitalize">
+            {{ crumb.title }}
           </span>
-        </BreadcrumbLink>
-        <meta
-          property="position"
-          content="1"
-        >
-      </BreadcrumbItem>
-      <template
-        v-for="(crumb, index) in crumbs"
-        :key="index"
-      >
-        <template v-if="crumb.fullPath !== '/'">
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink
-              :to="crumb.path"
-              class="capitalize"
-            >
-              {{ crumb.title }}
-            </BreadcrumbLink>
-            <meta
-              property="position"
-              :content="index + 2"
-            >
-          </BreadcrumbItem>
-        </template>
+          <meta property="position" :content="index + 2">
+          <BreadcrumbSeparator v-show="index < crumbs.length - 1" />
+        </BreadcrumbItem>
       </template>
     </Breadcrumb>
-  </div>
 </template>
 
 <script setup>
