@@ -46,6 +46,7 @@
   },
   "strings": {
     "loading": "Loading",
+    "filters": "Filters",
     "here": "here",
     "not_affiliated": "Not affiliated with Seats.aero"
   },
@@ -63,12 +64,16 @@
       "all_cabins": "All Cabins"
     },
     "labels": {
+      "one_way": "One Way",
+      "round_trip": "Round Trip",
       "source": "Source",
       "origin": "Origin",
       "destination": "Destination",
       "start_date": "Start Date",
       "end_date": "End Date",
-      "cabin": "Cabin"
+      "cabin": "Cabin",
+      "outbound": "Outbound",
+      "inbound": "Inbound"
     }
   },
   "api_usage": {
@@ -88,5 +93,9 @@
       "title": "No results",
       "msg": "Seats.aero API did't return any result for this search",
     }
-  }
+  },
+  "loading_strings": [
+    "Cleared for takeoff!",
+    "Cruising at 35,000 feet..."
+  ]
 }

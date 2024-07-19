@@ -3,6 +3,8 @@ import { useSeatsAeroApiStore } from '@/stores/seatsAeroApi'
 import { useNotificationStore } from '@/stores/notification'
 
 export const useSeatsAeroCachedSearchApi = () => {
+  const isLoading = useState('cachedDataApiRequestLoading', () => false)
+  const finished = useState('cachedDataApiRequestFinished', () => false)
   const response = useState('cachedDataApiResponse', () => shallowRef([]))
   const searchFilters = useState('cachedDataApiResponseFilters', () => shallowRef({}))
   const nuxtApp = useNuxtApp()
@@ -91,11 +93,16 @@ export const useSeatsAeroCachedSearchApi = () => {
     }
   }
 
-  async function get(formData) {
+  async function get(formData, clear = true) {
     let hasMore = true
     let apiResponse
 
-    clearResponse()
+    isLoading.value = true;
+    finished.value = false;
+
+    if (clear) {
+      clearResponse()
+    }
 
     while (hasMore) {
       apiResponse = await fetchAPi(formData)
@@ -113,11 +120,17 @@ export const useSeatsAeroCachedSearchApi = () => {
       hasMore = apiResponse.hasMore
     }
 
+    isLoading.value = false;
+    finished.value = true;
+
+
     nuxtApp.callHook('ajax:finish')
   }
   return {
     response,
     get,
+    isLoading,
+    finished,
     searchConfiguration,
     searchFilters,
   }

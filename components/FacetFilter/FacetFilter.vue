@@ -7,7 +7,7 @@
         class="hs-collapse-toggle flex w-full items-center justify-between py-3 text-sm text-gray-400 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none"
         :data-hs-collapse="`#${name}-filter-group`"
       >
-        <span class="font-medium text-gray-900">
+        <span class="font-medium text-gray-900 dark:text-white">
           {{ $t(`filters.${title}`) }}
         </span>
         <svg

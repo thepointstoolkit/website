@@ -29,7 +29,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  modelValue: { type: [Array, Boolean] },
+  modelValue: { type: [Array, Boolean, String] },
   value: { type: [Boolean, String] },
 })
 

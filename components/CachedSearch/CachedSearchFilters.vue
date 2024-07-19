@@ -1,7 +1,7 @@
 <template>
   <div v-show="hasResults">
     <SectionDivider class="my-3">
-      Filters
+      {{$t("strings.filters")}}
     </SectionDivider>
     <div class="row">
       <template

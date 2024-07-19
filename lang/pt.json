@@ -22,6 +22,7 @@
     "OriginRegion": "Região de Origem",
     "DestinationRegion": "Região de Destino",
     "Month": "Mês",
+    "Cabins": "Cabines",
     "Date": "Data"
   },
   "cabins": {
@@ -43,6 +44,7 @@
   },
   "strings": {
     "loading": "Carregando",
+    "filters": "Filtros",
     "here": "aqui",
     "not_affiliated": "Não afiliado ao Seats.aero"
   },
@@ -60,12 +62,16 @@
       "all_cabins": "Todas as Cabines"
     },
     "labels": {
+      "one_way": "Só Ida",
+      "round_trip": "Ida e Volta",
       "source": "Programa",
       "origin": "Origem",
       "destination": "Destino",
       "start_date": "Data de Início",
       "end_date": "Data de Término",
-      "cabin": "Cabine"
+      "cabin": "Cabine",
+      "outbound": "Partida",
+      "inbound": "Chegada"
     }
   },
   "api_usage": {
@@ -85,5 +91,9 @@
       "title": "Sem resultados",
       "msg": "A API do Seats.aero não retornou nenhum resultado para esta busca"
     }
-  }
+  },
+  "loading_strings": [
+    "Autorizado para decolagem!",
+    "Voando a 35.000 pés..."
+  ]
 }

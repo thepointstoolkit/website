@@ -48,7 +48,7 @@ import { useSeatsAeroCachedSearchApi } from '@/composables/useSeatsAeroCachedSea
 
 const { searchFilters } = useSeatsAeroCachedSearchApi()
 
-defineProps({
+const props = defineProps({
   month: {
     type: Number,
   },
@@ -70,6 +70,10 @@ defineProps({
   monthLabel: {
     type: String,
   },
+  filters: {
+    type: Object,
+    default: () => { },
+  },
 })
 const dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 
@@ -80,6 +84,7 @@ function getFiltersFor(day, month, year) {
   const formattedDate = format(date, 'yyyy-MM-dd')
   return {
     ...searchFilters.value,
+    ...props.filters,
     Date: [formattedDate],
   }
 }
