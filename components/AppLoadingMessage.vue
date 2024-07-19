@@ -20,12 +20,12 @@
 
 <script setup>
 const MAX_COUNT = 2
-const counter = ref(1)
+const counter = ref(0)
 let intervalId = null
 
 const startCounter = () => {
   intervalId = setInterval(() => {
-    if (counter.value <= MAX_COUNT) {
+    if (counter.value < MAX_COUNT) {
       counter.value += 1
     }
     else {
