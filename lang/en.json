@@ -61,7 +61,8 @@
     },
     "strings": {
       "all_sources": "All Sources",
-      "all_cabins": "All Cabins"
+      "all_cabins": "All Cabins",
+      "all_options": "All Options"
     },
     "labels": {
       "one_way": "One Way",

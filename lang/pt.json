@@ -59,7 +59,8 @@
     },
     "strings": {
       "all_sources": "Todas os Programas",
-      "all_cabins": "Todas as Cabines"
+      "all_cabins": "Todas as Cabines",
+      "all_options": "Todas Opções"
     },
     "labels": {
       "one_way": "Só Ida",

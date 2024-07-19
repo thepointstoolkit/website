@@ -49,6 +49,10 @@
               v-model="inboundFilters.OriginAirport[0]"
               class="mb-3"
             >
+              <option
+                :label="$t('cached_search_form.strings.all_options')"
+                value=""
+              />
               <template
                 v-for="bucket in inboundAirports"
                 :key="bucket.key"
@@ -80,6 +84,10 @@
               v-model="outboundFilters.OriginAirport[0]"
               class="mb-3"
             >
+              <option
+                :label="$t('cached_search_form.strings.all_options')"
+                value=""
+              />
               <template
                 v-for="bucket in outboundAirports"
                 :key="bucket.key"
@@ -109,6 +117,7 @@
 import itemsjs from 'itemsjs'
 import { computed } from 'vue'
 import { useSeatsAeroCachedSearchApi } from '@/composables/useSeatsAeroCachedSearchApi'
+import { multicodeAirports } from '@/data'
 
 const { searchFilters, response, searchConfiguration, finished, isLoading } = useSeatsAeroCachedSearchApi()
 const searchableResponse = computed(() => itemsjs(response.value, searchConfiguration).search({
@@ -116,8 +125,8 @@ const searchableResponse = computed(() => itemsjs(response.value, searchConfigur
 }))
 
 const formData = ref({})
-const inboundFilters = ref({ OriginAirport: [] })
-const outboundFilters = ref({ OriginAirport: [] })
+const inboundFilters = ref({ OriginAirport: [], DestinationAirport: [] })
+const outboundFilters = ref({ OriginAirport: [], DestinationAirport: [] })
 const showFilterInfo = ref(false)
 
 const { t } = useI18n({
@@ -133,13 +142,42 @@ useSeoMeta({
 
 function handleSubmit() {
   showFilterInfo.value = true
-  inboundFilters.value.OriginAirport[0] = formData.value.origin.toUpperCase()
-  outboundFilters.value.OriginAirport[0] = formData.value.destination.toUpperCase()
+  const multiCodeOrigin = multicodeAirports.includes(formData.value.origin.toUpperCase())
+  const multiCodeDestination = multicodeAirports.includes(formData.value.destination.toUpperCase())
+
+  inboundFilters.value.OriginAirport[0] = multiCodeOrigin ? '' : formData.value.origin.toUpperCase()
+  outboundFilters.value.OriginAirport[0] = multiCodeDestination ? '' : formData.value.destination.toUpperCase()
   HSOverlay.close('#app-sidebar')
 }
 const isRoundTrip = computed(() => formData.value.searchType == 'round_trip')
 const outboundAirports = computed(() => searchableResponse?.value.data.aggregations.DestinationAirport.buckets ?? [])
 const inboundAirports = computed(() => searchableResponse?.value.data.aggregations.OriginAirport.buckets ?? [])
+
+watch(
+  () => inboundFilters.value.OriginAirport,
+  (newValue) => {
+    if (newValue[0] != '') {
+      outboundFilters.value.DestinationAirport[0] = newValue[0]
+    }
+    else {
+      outboundFilters.value.DestinationAirport = []
+    }
+  },
+  { deep: true }, // Ensure deep watching
+)
+
+watch(
+  () => outboundFilters.value.OriginAirport,
+  (newValue) => {
+    if (newValue[0] != '') {
+      inboundFilters.value.DestinationAirport[0] = newValue[0]
+    }
+    else {
+      inboundFilters.value.DestinationAirport = []
+    }
+  },
+  { deep: true }, // Ensure deep watching
+)
 </script>
 
 <i18n lang="json">

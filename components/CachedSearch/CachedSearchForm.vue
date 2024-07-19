@@ -9,7 +9,7 @@
       >
         <div class="flex flex-row w-fit mx-auto">
           <div
-            class="flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px -ms-px first:rounded-se-none first:rounded-es-lg last:rounded-es-none last:rounded-se-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
+            class="flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px -ms-px rounded-l-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
           >
             <div class="relative flex items-start w-full">
               <FormRadio
@@ -22,7 +22,7 @@
           </div>
 
           <div
-            class="flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px -ms-px first:rounded-se-none first:rounded-es-lg last:rounded-es-none last:rounded-se-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
+            class="flex items-center gap-x-2.5 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px -ms-px rounded-r-lg dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
           >
             <div class="relative flex items-start w-full">
               <FormRadio
@@ -271,7 +271,7 @@ const broadSearch = computed(() => {
     showMessage = true
   }
 
-  if (formData.searchType == 'round_trip' && formData.source == '') {
+  if (formData.searchType == 'round_trip' && (formData.source == '' || multiCodeDestination || multiCodeOrigin)) {
     showMessage = true
   }
 

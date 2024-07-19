@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-const MAX_COUNT = 2
+const MAX_COUNT = 1
 const counter = ref(0)
 let intervalId = null
 
