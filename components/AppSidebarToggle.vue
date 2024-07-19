@@ -1,8 +1,5 @@
 
 <template>
-        <!-- End Breadcrumb -->
-
-        <!-- Navigation Toggle -->
         <button type="button"
           class="p-2 flex justify-center items-center gap-x-1.5 text-xs rounded-lg border border-gray-200 text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-700 lg:hidden"
           data-hs-overlay="#app-sidebar" aria-controls="app-sidebar"
@@ -13,7 +10,6 @@
             stroke-linejoin="round">
             <path d="M17 8L21 12L17 16M3 12H13M3 6H13M3 18H13"></path>
           </svg>
-          {{$t('sidebar')}}
+          {{$t('buttons.sidebar')}}
         </button>
-        <!-- End Navigation Toggle -->
 </template>

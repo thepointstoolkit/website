@@ -11,9 +11,11 @@
   },
   "buttons": {
     "search": "Search",
-    "sidebar": "Sidebar"
+    "sidebar": "Sidebar",
+    "filter_results": "Filter Results"
   },
   "filters": {
+    "Route": "Route",
     "Source": "Source",
     "OriginAirport": "Origin Airport",
     "DestinationAirport": "Destination Airport",
@@ -31,6 +33,17 @@
     "premium": "Premium",
     "economy": "Economy"
   },
+  "days": {
+    "letter": {
+      "sun": "S",
+      "mon": "M",
+      "tue": "T",
+      "wed": "W",
+      "thu": "T",
+      "fri": "F",
+      "sat": "S"
+    }
+  },
   "strings": {
     "loading": "Loading",
     "here": "here",
@@ -47,7 +60,7 @@
     },
     "strings": {
       "all_sources": "All Sources",
-      "all_cabins": "All Cabins",
+      "all_cabins": "All Cabins"
     },
     "labels": {
       "source": "Source",
@@ -69,7 +82,11 @@
   "alerts": {
     "api_key_warning": {
       "title": "Missing Seats.aero API Key",
-      "msg": "Before using this tool you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key",
+      "msg": "Before using this tool you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key"
+    },
+    "no_results": {
+      "title": "No results",
+      "msg": "Seats.aero API did't return any result for this search",
     }
   }
 }

@@ -18,15 +18,9 @@
 const isMobile = computed(() => window.innerWidth <= 768)
 
 onMounted(() => {
-  // window.addEventListener('resize', updateIsMobile);
   if(isMobile.value) {
     HSOverlay.open('#app-sidebar');
   }
 });
-
-// onUnmounted(() => {
-//   window.removeEventListener('resize', updateIsMobile);
-// });
-
 
 </script>

@@ -10,6 +10,12 @@ export default {
         135: '135deg',
         225: '225deg',
       },
+      strokeWidth: {
+        '3': '3px',
+        '4': '4px',
+        '5': '5px',
+        '6': '6px',
+      }
     },
   },
   plugins: [

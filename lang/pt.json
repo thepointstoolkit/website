@@ -10,9 +10,12 @@
     "cached_search": "Cached Search"
   },
   "buttons": {
-    "search": "Buscar"
+    "search": "Buscar",
+    "sidebar": "Barra Lateral",
+    "filter_results": "Filtrar Resultados"
   },
   "filters": {
+    "Route": "Rota",
     "Source": "Programa",
     "OriginAirport": "Aeroporto de Origem",
     "DestinationAirport": "Aeroporto de Destino",
@@ -26,6 +29,17 @@
     "business": "Executiva",
     "premium": "Premium Economy",
     "economy": "Economica"
+  },
+  "days": {
+    "letter": {
+      "sun": "D",
+      "mon": "S",
+      "tue": "T",
+      "wed": "Q",
+      "thu": "Q",
+      "fri": "S",
+      "sat": "S"
+    }
   },
   "strings": {
     "loading": "Carregando",
@@ -43,7 +57,7 @@
     },
     "strings": {
       "all_sources": "Todas os Programas",
-      "all_cabins": "Todas as Cabines",
+      "all_cabins": "Todas as Cabines"
     },
     "labels": {
       "source": "Programa",
@@ -62,11 +76,14 @@
       "api_key": "Chave API do Seats.aero"
     }
   },
-
   "alerts": {
     "api_key_warning": {
       "title": "Chave API  Seats.aero ausente",
       "msg": "Antes de usar esta ferramenta, você precisa configurar sua chave API do Seats.aero, localizada no menu deste site. Você pode obter sua chave API do Seats.aero"
+    },
+    "no_results": {
+      "title": "Sem resultados",
+      "msg": "A API do Seats.aero não retornou nenhum resultado para esta busca"
     }
   }
 }

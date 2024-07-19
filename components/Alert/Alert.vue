@@ -1,6 +1,6 @@
 <template>
   <div :id="id"
-    class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 border text-sm rounded-lg p-4"
+    class="w-full hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 border text-sm rounded-lg p-4"
     :class="[colorClasses]" role="alert">
     <div class="flex">
       <div class="ms-4">

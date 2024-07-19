@@ -19,8 +19,8 @@
         <AppSidebar v-if="hasSlotContent('sidebar')">
           <slot name="sidebar" />
         </AppSidebar>
-        <main class="flex-1 p-4 overflow-y-auto">
-          <div class="w-full px-4 sm:px-6 md:px-8">
+        <main class="flex-1 overflow-y-auto p-2 sm:p-4 md:p-8">
+          <div class="w-full">
             <NotificationList />
             <slot />
           </div>

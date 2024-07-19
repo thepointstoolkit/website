@@ -15,9 +15,9 @@
       </template>
       <BButtonSolid data-hs-overlay="#app-sidebar" v-if="showFilterInfo"
         class="fixed bottom-4 right-4 left-4 text-lg justify-center items-center z-10 p-4 rounded shadow-lg md:hidden">
-        <Icon name="tabler:filter" /> Filter
+        <Icon name="tabler:filter" /> {{ $t("buttons.filter_results") }}
       </BButtonSolid>
-      <div class="flex">
+      <div class="flex gap-2 justify-between">
         <YearlyCalendar :start-date="formData?.startDate"
           :end-date="formData?.endDate" />
       </div>
