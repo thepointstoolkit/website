@@ -97,8 +97,8 @@ export const useSeatsAeroCachedSearchApi = () => {
     let hasMore = true
     let apiResponse
 
-    isLoading.value = true;
-    finished.value = false;
+    isLoading.value = true
+    finished.value = false
 
     if (clear) {
       clearResponse()
@@ -120,9 +120,8 @@ export const useSeatsAeroCachedSearchApi = () => {
       hasMore = apiResponse.hasMore
     }
 
-    isLoading.value = false;
-    finished.value = true;
-
+    isLoading.value = false
+    finished.value = true
 
     nuxtApp.callHook('ajax:finish')
   }

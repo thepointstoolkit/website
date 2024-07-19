@@ -23,9 +23,8 @@ const isMobile = computed(() => window.innerWidth <= 768)
 onMounted(() => {
   if (isMobile.value) {
     setTimeout(() => {
-    window.HSOverlay.open('#app-sidebar')
-    }, 900);
-
+      window.HSOverlay.open('#app-sidebar')
+    }, 900)
   }
 })
 </script>
