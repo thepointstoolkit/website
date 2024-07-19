@@ -1,17 +1,41 @@
 <template>
-  <g class="origin-center transform" :class="[rotationClass]">
+  <g
+    class="origin-center transform"
+    :class="[rotationClass]"
+  >
     <template v-if="isDirect">
-      <circle cx="18" cy="18" r="15" fill="none"
-        class="stroke-current size-6 stroke-4 md:stroke-5 lg:stroke-6" :class="[colorClasses]"
-        stroke-dasharray="100" stroke-dashoffset="75" />
+      <circle
+        cx="18"
+        cy="18"
+        r="15"
+        fill="none"
+        class="stroke-current size-6 stroke-4 md:stroke-5 lg:stroke-6"
+        :class="[colorClasses]"
+        stroke-dasharray="100"
+        stroke-dashoffset="75"
+      />
     </template>
     <template v-else>
-      <circle cx="18" cy="18" r="13" fill="none"
-        class="stroke-current stroke-1 md:stroke-2" :class="[colorClasses]"
-        stroke-dasharray="100" stroke-dashoffset="75" />
-      <circle cx="18" cy="18" r="17" fill="none"
-        class="stroke-current stroke-1 md:stroke-2" :class="[colorClasses]"
-        stroke-dasharray="100" stroke-dashoffset="70" />
+      <circle
+        cx="18"
+        cy="18"
+        r="13"
+        fill="none"
+        class="stroke-current stroke-1 md:stroke-2"
+        :class="[colorClasses]"
+        stroke-dasharray="100"
+        stroke-dashoffset="75"
+      />
+      <circle
+        cx="18"
+        cy="18"
+        r="17"
+        fill="none"
+        class="stroke-current stroke-1 md:stroke-2"
+        :class="[colorClasses]"
+        stroke-dasharray="100"
+        stroke-dashoffset="70"
+      />
     </template>
   </g>
 </template>

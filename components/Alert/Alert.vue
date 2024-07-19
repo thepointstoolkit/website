@@ -1,29 +1,49 @@
 <template>
-  <div :id="id"
+  <div
+    :id="id"
     class="w-full hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 border text-sm rounded-lg p-4"
-    :class="[colorClasses]" role="alert">
+    :class="[colorClasses]"
+    role="alert"
+  >
     <div class="flex">
       <div class="ms-4">
         <h3 class="text-sm font-semibold">
           {{ title }}
         </h3>
-        <div v-if="$slots.default" class="mt-2 text-sm" :class="[bodyClasses]">
+        <div
+          v-if="$slots.default"
+          class="mt-2 text-sm"
+          :class="[bodyClasses]"
+        >
           <slot />
         </div>
       </div>
-      <div class="ps-3 ms-auto" v-if="dismiss">
+      <div
+        v-if="dismiss"
+        class="ps-3 ms-auto"
+      >
         <div class="-mx-1.5 -my-1.5">
-          <button type="button"
+          <button
+            type="button"
             class="inline-flex rounded-lg p-1.5  focus:outline-none focus:ring-2 focus:ring-offset-2"
             :class="[dismissClasses]"
-            :data-hs-remove-element="`#${id}`">
+            :data-hs-remove-element="`#${id}`"
+          >
             <span class="sr-only">Dismiss</span>
-            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
-              width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M18 6 6 18"></path>
-              <path d="m6 6 12 12"></path>
+            <svg
+              class="flex-shrink-0 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
             </svg>
           </button>
         </div>

@@ -1,10 +1,10 @@
 <template>
   <Alert
     v-for="notification in notifications"
+    :id="`notification-${notification.id}`"
     :key="notification.id"
     :type="notification.type"
     :title="notification.title"
-    :id="`notification-${notification.id}`"
     class="my-5"
   >
     <p v-html="notification.message" />

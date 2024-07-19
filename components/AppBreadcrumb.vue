@@ -1,19 +1,31 @@
 <template>
-    <Breadcrumb v-if="route.fullPath !== '/'">
-      <template v-for="(crumb, index) in crumbs" :key="index">
-        <BreadcrumbItem>
-          <BreadcrumbLink :to="crumb.path" class="capitalize"
-            v-if="index < crumbs.length - 1">
-            {{ crumb.title }}
-          </BreadcrumbLink>
-          <span v-else class="font-semibold capitalize">
-            {{ crumb.title }}
-          </span>
-          <meta property="position" :content="index + 2">
-          <BreadcrumbSeparator v-show="index < crumbs.length - 1" />
-        </BreadcrumbItem>
-      </template>
-    </Breadcrumb>
+  <Breadcrumb v-if="route.fullPath !== '/'">
+    <template
+      v-for="(crumb, index) in crumbs"
+      :key="index"
+    >
+      <BreadcrumbItem>
+        <BreadcrumbLink
+          v-if="index < crumbs.length - 1"
+          :to="crumb.path"
+          class="capitalize"
+        >
+          {{ crumb.title }}
+        </BreadcrumbLink>
+        <span
+          v-else
+          class="font-semibold capitalize"
+        >
+          {{ crumb.title }}
+        </span>
+        <meta
+          property="position"
+          :content="index + 2"
+        >
+        <BreadcrumbSeparator v-show="index < crumbs.length - 1" />
+      </BreadcrumbItem>
+    </template>
+  </Breadcrumb>
 </template>
 
 <script setup>

@@ -4,20 +4,27 @@
       Filters
     </SectionDivider>
     <div class="row">
-      <template v-for="filter in allowedFilters" :key="`filter-${filter}`">
-        <FacetFilter :name="filter" :title="filter">
+      <template
+        v-for="filter in allowedFilters"
+        :key="`filter-${filter}`"
+      >
+        <FacetFilter
+          :name="filter"
+          :title="filter"
+        >
           <template
             v-for="bucket in searchableResponse.data.aggregations[filter].buckets"
-            :key="bucket.key">
-            <FormCheckbox :id="`${filter}_${bucket.key}`"
+            :key="bucket.key"
+          >
+            <FormCheckbox
+              :id="`${filter}_${bucket.key}`"
               v-model="filters[filter]"
               :label="`${bucket.key} (${bucket.doc_count})`"
-              :value="bucket.key" />
+              :value="bucket.key"
+            />
           </template>
         </FacetFilter>
-
       </template>
-
     </div>
   </div>
 </template>
@@ -41,9 +48,8 @@ defineProps({
       'Month',
       'Date',
     ],
-  }
+  },
 })
-
 
 const { searchFilters, response, searchConfiguration } = useSeatsAeroCachedSearchApi()
 onMounted(() => resetFilters())
@@ -68,5 +74,4 @@ watch(filters, async (newValue) => {
 onUpdated(() => {
   // new HSCollapse(document.querySelector('#collapse'))
 })
-
 </script>

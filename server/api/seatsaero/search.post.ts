@@ -1,6 +1,5 @@
 import { format } from 'date-fns'
-import { SeatsAeroApiResponse, SeatsAeroCachedData } from "@/repository/seatsaero/seatsaero.d.ts"
-
+import type { SeatsAeroApiResponse, SeatsAeroCachedData } from '@/repository/seatsaero/seatsaero.d.ts'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
@@ -18,7 +17,6 @@ export default defineEventHandler(async (event) => {
 })
 
 function formatResponse(r: SeatsAeroApiResponse) {
-
   return {
     rateLimit: r.rateLimit,
     moreURL: r.moreURL,
@@ -40,36 +38,35 @@ function formatResponse(r: SeatsAeroApiResponse) {
   }
 }
 function getAvailableCabinsIn(i: SeatsAeroCachedData) {
-  const availableCabins: string[] = [];
+  const availableCabins: string[] = []
   if (i.YAvailable) {
-    availableCabins.push("Y");
+    availableCabins.push('Y')
   }
   if (i.WAvailable) {
-    availableCabins.push("W");
+    availableCabins.push('W')
   }
 
   if (i.JAvailable) {
-    availableCabins.push("J");
+    availableCabins.push('J')
   }
 
   if (i.FAvailable) {
-    availableCabins.push("F");
+    availableCabins.push('F')
   }
   if (i.YDirect) {
-    availableCabins.push("Direct Y");
+    availableCabins.push('Direct Y')
   }
   if (i.WDirect) {
-    availableCabins.push("Direct W");
+    availableCabins.push('Direct W')
   }
 
   if (i.JDirect) {
-    availableCabins.push("Direct J");
+    availableCabins.push('Direct J')
   }
 
   if (i.FDirect) {
-    availableCabins.push("Direct F");
+    availableCabins.push('Direct F')
   }
 
-  return availableCabins;
+  return availableCabins
 }
-
