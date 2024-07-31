@@ -1473,7 +1473,7 @@
 
 "@preline/theme-switch@^2.4.1":
   version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@preline/theme-switch/-/theme-switch-2.4.1.tgz#4985ca65e33eec1bd59b4bd854de837ed84307da"
+  resolved "https://registry.npmjs.org/@preline/theme-switch/-/theme-switch-2.4.1.tgz"
   integrity sha512-MLdJFiVKFRUUUYnpqyQbxNNhAwmG9kdJY6yst2WTWASU6HXKNKMJDTDJyN2V3A1AU6Koyd6OMHt7DlmEqz1zxQ==
 
 "@rollup/plugin-alias@^5.1.0":
