@@ -7,14 +7,14 @@
       :label="$t('api_usage.labels.api_key')"
       :floating-label="true"
       label-classes="ps-11"
-      placeholder="*********"
+      placeholder=""
     >
       <div
         class="absolute inset-y-0 start-0 flex items-center pointer-events-none
     ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none"
       >
         <svg
-          class="flex-shrink-0 size-4 text-gray-500 dark:text-neutral-500"
+          class="flex-shrink-0 size-4 text-gray-500 dark:text-neutral-400"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

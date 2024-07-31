@@ -5,9 +5,13 @@
   },
   "menu": {
     "yearly_calendar": "Calendário Anual",
+    "tools": "Ferramentas",
     "routes": "Rotas",
+    "settings": "Configurações",
+    "sponsors": "Patrocinadores",
     "api_playground": "API Playground",
-    "cached_search": "Cached Search"
+    "cached_search": "Cached Search",
+    "contributing": "Contribuir"
   },
   "buttons": {
     "search": "Buscar",
@@ -46,7 +50,9 @@
     "loading": "Carregando",
     "filters": "Filtros",
     "here": "aqui",
-    "not_affiliated": "Não afiliado ao Seats.aero"
+    "referral_link": "link de afiliado",
+    "not_affiliated": "Não afiliado ao Seats.aero",
+    "soon": "Em breve"
   },
   "cached_search_form": {
     "broad_search": {
@@ -86,7 +92,7 @@
   "alerts": {
     "api_key_warning": {
       "title": "Chave API  Seats.aero ausente",
-      "msg": "Antes de usar esta ferramenta, você precisa configurar sua chave API do Seats.aero, localizada no menu deste site. Você pode obter sua chave API do Seats.aero"
+      "msg": "Antes de usar esta ferramenta, você precisa configurar sua chave API do Seats.aero, localizada na página de configurações. Você pode configura-lá"
     },
     "no_results": {
       "title": "Sem resultados",

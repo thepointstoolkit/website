@@ -15,7 +15,7 @@
           @submit="handleSubmit"
         />
       </template>
-
+<ApiKeyWarning/>
       <BButtonSolid
         v-if="showFilterInfo"
         data-hs-overlay="#app-sidebar"

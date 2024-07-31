@@ -36,7 +36,7 @@
             <slot name="sidebar" />
           </AppSidebar>
           <main class="flex-1 overflow-y-auto p-2 sm:p-4 md:p-8">
-            <div class="w-full">
+            <div class="w-full h-full">
               <NotificationList />
               <slot />
             </div>

@@ -2,31 +2,25 @@
   <div class="flex flex-col sm:flex-row">
     <Dropdown>
       <DropdownTrigger>
-        <NuxtLink :to="localePath('/routes')">
+        <NuxtLink :to="localePath('/tools')">
+          {{ $t("menu.tools") }}
+        </NuxtLink>
+      </DropdownTrigger>
+      <DropdownItems>
+        <DropdownItem :to="localePath('/tools/routes')">
           {{ $t("menu.routes") }}
-        </NuxtLink>
-      </DropdownTrigger>
-      <DropdownItems>
-        <DropdownItem :to="localePath('/routes/yearly-calendar')">
-          {{ $t("menu.yearly_calendar") }}
         </DropdownItem>
-      </DropdownItems>
-    </Dropdown>
-    <Dropdown>
-      <DropdownTrigger>
-        <NuxtLink :to="localePath('/api-playground')">
+
+        <DropdownItem :to="localePath('/tools/api-playground')">
           {{ $t("menu.api_playground") }}
-        </NuxtLink>
-      </DropdownTrigger>
-      <DropdownItems>
-        <DropdownItem :to="localePath('/api-playground/cached-search')">
-          {{ $t("menu.cached_search") }}
         </DropdownItem>
       </DropdownItems>
     </Dropdown>
+    <NavigationLink :to="localePath('/sponsors')">
+      {{ $t("menu.sponsors") }}
+    </NavigationLink>
+    <NavigationLink :to="localePath('/contributing')">
+      {{ $t("menu.contributing") }}
+    </NavigationLink>
   </div>
 </template>
-
-<script setup>
-const localePath = useLocalePath()
-</script>

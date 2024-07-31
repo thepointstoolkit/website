@@ -1,19 +1,11 @@
 <template>
-  <Alert
-    v-show="isVisible"
-    id="missing-api-api-alert"
-    :title="$t('alerts.api_key_warning.title')"
-    type="error"
-    class="my-5"
-  >
+  <Alert v-show="isVisible" id="missing-api-api-alert"
+    :title="$t('alerts.api_key_warning.title')" type="error" class="my-5">
     {{ $t("alerts.api_key_warning.msg") }}
-    <a
-      href="https://seats.aero/apikey"
-      target="_blank"
-      class="inline-flex items-center gap-x-1 text-sm decoration-2 hover:underline font-bold"
-    >
+    <NuxtLink to="/settings"
+      class="inline-flex items-center gap-x-1 text-sm decoration-2 hover:underline font-bold">
       {{ $t("strings.here") }}
-    </a>.
+    </NuxtLink>.
   </Alert>
 </template>
 

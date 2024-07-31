@@ -35,7 +35,7 @@
       peer-[:not(:placeholder-shown)]:scale-90
       peer-[:not(:placeholder-shown)]:translate-x-0.5
       peer-[:not(:placeholder-shown)]:-translate-y-1.5
-      peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500"
+      peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-400"
       >
         {{ label }}
       </label>
