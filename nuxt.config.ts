@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     seatsAeroApiToken: process.env.SEATSAERO_API_TOKEN,
     public: {
       seatsAeroApiPath: process.env.SEATSAERO_API_BASE_URL,
+      seatsAeroReferralLink: process.env.SEATSAERO_REFERRAL_LINK,
       appName: process.env.APP_NAME,
       i18n: {
         baseUrl: process.env.APP_URL,

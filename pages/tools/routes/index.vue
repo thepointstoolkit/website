@@ -1,21 +1,18 @@
 <template>
-  <div>
-    <CardLinkList>
-      <CardLink :to="localePath('/routes/yearly-calendar')">
-        <template #title>
-          {{ t("yearly_calendar.title") }}
-        </template>
-        {{ t("yearly_calendar.description") }}
-        <template #leading>
-          <Icon
-            name="tabler:calendar-month"
-            size="1.5em"
-            class="text-gray-800 dark:text-neutral-200"
-          />
-        </template>
-      </CardLink>
-    </CardLinkList>
-  </div>
+  <SectionTitle :title="t('seo.title')" :subtitle="t('seo.description')" />
+  <CardLinkList>
+    <CardLink :to="localePath('/tools/routes/yearly-calendar')">
+      <template #title>
+        {{ t("yearly_calendar.title") }}
+      </template>
+      {{ t("yearly_calendar.description") }}
+      <template #leading>
+        <Icon name="tabler:calendar-month" size="1.5em"
+          class="text-gray-800 dark:text-neutral-200" />
+      </template>
+      <CardLinkBadge>Seats.aero API</CardLinkBadge>
+    </CardLink>
+  </CardLinkList>
 </template>
 
 <script setup lang="ts">
@@ -45,7 +42,7 @@ useSeoMeta({
   "pt": {
     "seo": {
       "title": "Rotas",
-      "description": "Explore várias visualizações para uma rota específica com nosso conjunto abrangente de ferramentas."
+      "description": "Explore várias visualizações para uma rota específica com nosso conjunto de ferramentas."
     },
     "yearly_calendar": {
       "title": "Calendário Anual",

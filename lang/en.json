@@ -6,8 +6,12 @@
   "menu": {
     "yearly_calendar": "Yearly Calendar",
     "routes": "Routes",
+    "tools": "Tools",
+    "settings": "Settings",
+    "sponsors": "Sponsors",
     "api_playground": "API Playground",
-    "cached_search": "Cached Search"
+    "cached_search": "Cached Search",
+    "contributing": "Contributing"
   },
   "buttons": {
     "search": "Search",
@@ -48,7 +52,9 @@
     "loading": "Loading",
     "filters": "Filters",
     "here": "here",
-    "not_affiliated": "Not affiliated with Seats.aero"
+    "referral_link": "referal link",
+    "not_affiliated": "Not affiliated with Seats.aero",
+    "soon": "Comming Soon"
   },
   "cached_search_form": {
     "broad_search": {
@@ -88,11 +94,11 @@
   "alerts": {
     "api_key_warning": {
       "title": "Missing Seats.aero API Key",
-      "msg": "Before using this tool you need to configure your Seats.aero API key, located in the menu of this website. You can get your Seats.aero API key"
+      "msg": "Before using this tool you need to configure your Seats.aero API key, located in the settings page. You can configure it"
     },
     "no_results": {
       "title": "No results",
-      "msg": "Seats.aero API did't return any result for this search",
+      "msg": "Seats.aero API did't return any result for this search"
     }
   },
   "loading_strings": [

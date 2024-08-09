@@ -16,7 +16,6 @@ import AppLanguageSelector from './AppLanguageSelector.vue';
             </div>
           </div>
           <div class="flex justify-between items-center space-x-4">
-            <AppThemeSwitcher />
             <AppLanguageSelector />
           </div>
         </div>

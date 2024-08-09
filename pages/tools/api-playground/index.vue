@@ -1,17 +1,14 @@
 <template>
   <div>
     <CardLinkList>
-      <CardLink :to="localePath('/api-playground/cached-search')">
+      <CardLink :to="localePath('/tools/api-playground/cached-search')">
         <template #title>
           {{ t('cache_search.title') }}
         </template>
         {{ t('cache_search.description') }}
         <template #leading>
-          <Icon
-            name="tabler:map-search"
-            size="1.5em"
-            class="text-gray-800 dark:text-neutral-200"
-          />
+          <Icon name="tabler:map-search" size="1.5em"
+            class="text-gray-800 dark:text-neutral-200" />
         </template>
       </CardLink>
     </CardLinkList>

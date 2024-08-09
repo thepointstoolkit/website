@@ -14,7 +14,7 @@
             <span
               v-for="dayName in dayNames"
               :key="'day-name-' + dayName"
-              class=" lg:size-10 lg:m-2 block text-center text-sm text-gray-500 dark:text-neutral-500"
+              class=" lg:size-10 lg:m-2 block text-center text-sm text-gray-500 dark:text-neutral-400"
             >
               {{ $t('days.letter.'+dayName) }}
             </span>

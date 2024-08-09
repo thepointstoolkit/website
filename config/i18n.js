@@ -22,21 +22,25 @@ export default {
   ],
   customRoutes: 'config',
   pages: {
-    'api-playground/index': {
-      en: '/api-playground',
-      pt: '/api-playground',
+    '/tools/index': {
+      en: '/tools',
+      pt: '/ferramentas',
     },
-    'api-playground/cached-search': {
-      en: '/api-playground/cached-search',
-      pt: '/api-playground/cached-search',
+    '/tools/api-playground/index': {
+      en: '/tools/api-playground',
+      pt: '/ferramentas/api-playground',
     },
-    'routes/index': {
-      en: '/routes',
-      pt: '/rotas',
+    '/tools/api-playground/cached-search': {
+      en: '/tools/api-playground/cached-search',
+      pt: '/ferramentas/api-playground/cached-search',
     },
-    'routes/yearly-calendar': {
-      en: '/routes/yearly-calendar',
-      pt: '/rotas/calendario-anual',
+    '/tools/routes/index': {
+      en: '/tools/routes',
+      pt: '/ferramentas/rotas',
+    },
+    '/tools/routes/yearly-calendar': {
+      en: '/tools/routes/yearly-calendar',
+      pt: '/ferramentas/rotas/calendario-anual',
     },
   },
 }

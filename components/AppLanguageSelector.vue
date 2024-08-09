@@ -12,7 +12,7 @@
       </div>
       {{ $t('lang.' + currentLocale.code) }}
       <svg
-        class="hs-dropdown-open:rotate-180 flex-shrink-0 size-4 text-gray-500 dark:text-neutral-500"
+        class="hs-dropdown-open:rotate-180 flex-shrink-0 size-4 text-gray-500 dark:text-neutral-400"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
