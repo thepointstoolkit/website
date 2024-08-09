@@ -9,14 +9,13 @@
   <div class="mt-12 flex justify-center">
     <div
       class="border border-gray-200 py-2 px-3 rounded-full dark:border-neutral-700">
-      <div class="flex items-center gap-x-3">
+      <div class="flex items-center gap-x-2">
         <span class="text-sm text-gray-500 dark:text-neutral-400">
           {{ t('section.cta') }}
         </span>
         <NuxtLink
           class="inline-flex items-center gap-x-2 text-sm font-medium text-red-600 hover:text-red-500 focus:outline-none focus:text-red-500 dark:text-red-500 dark:hover:text-red-600 dark:focus:text-red-600"
-          to="/contributing/financial-contributions">
-          {{ t('section.link') }}
+          href="mailto:sponsors@thepointstoolkit.com">sponsors@thepointstoolkit.com
           <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
             width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -44,16 +43,14 @@ const { t } = useI18n({
     "section": {
       "title": "Our Sponsors",
       "subtitle": "Their support and collaboration enable us to bring you the best tools, resources, and insights for optimizing your award travel.",
-      "cta": "Want to sponsor us?",
-      "link": "Learn How"
+      "cta": "Interested in supporting the project? Email us at"
     }
   },
   "pt": {
     "section": {
       "title": "Nossos Patrocinadores",
-      "subtitle": "Seu apoio e colaboração nos permitem oferecer as melhores ferramentas, recursos e insights para otimizar sua viagem com pontos.",
-      "cta": "Quer patrocinar o projeto?",
-      "link": "Saiba Como"
+      "subtitle": "Seu apoio e colaboração nos permitem oferecer as melhores ferramentas, recursos e insights para otimizar sua viagem com pontos e milhas.",
+      "cta": "Interessado em apoiar o projeto? Envie-nos um e-mail"
     }
   }
 }

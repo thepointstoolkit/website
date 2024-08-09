@@ -73,53 +73,54 @@ const { t } = useI18n({
   "en": {
     "section": {
       "title": "Our Tools",
-      "subtitle": "Whether you're looking to maximize your points, find the best flight deals, or plan your next trip, our tools are here to help you every step of the way."
+      "subtitle": "Whether you want to maximize your points and miles, find the best flight availabilities, or plan your next trip, our tools are here to assist you at every step of the process."
     },
     "routes": {
-      "title": "Routes Explorer",
-      "description": "Explore various visualizations for a specific route with our comprehensive set of tools. Gain insights and plan your travel efficiently."
+      "title": "Explore Routes",
+      "description": "Easily find the availability for route you want. We provide yearly availabilities, various filters, multiple visualization options, and much more."
     },
     "api_playground": {
-      "title": "Developer Tools",
-      "description": "Test the Seats.aero API endpoints and view raw response data in ourinteractive API Playground. Perfect for developers to experiment and integrate seamlessly."
+      "title": "Developer",
+      "description": "Test the Seats.aero API endpoints and view the response in our interactive playground."
     },
     "trip_planner": {
       "title": "Trip Planner",
-      "description": "Effortlessly visualize availability for multiple routes simultaneously simplifing the process for your trip planning."
+      "description": "Plan the best route for your trip by visualizing multiple segments simultaneously. Find connections and have all your options in one place."
     },
     "deep_link": {
-      "title": "Deep Link",
-      "description": "Set your search parameters once and get instant deep links to search results across multiple loyalty program websites. "
+      "title": "Direct Link",
+      "description": "Enter the flight details you want, and our tool creates direct links for all loyalty programs. Quickly compare options and find the best deal!"
     },
     "calculators": {
       "title": "Calculators",
-      "description": "Explore our calculators that help with all the math in the points and miles world, making it easier to maximize your travel rewards."
+      "description": "Find out whether it's better to use your miles or pay in cash, choose between bonus purchases or cashback. Everything you need to maximize your points."
     }
   },
-  "pt": {
-    "section": {
-      "title": "Nossas ferramentas",
-      "subtitle": "Se você deseja maximizar seus pontos, encontrar as melhores disponibilidades de voos ou planejar sua próxima viagem, nossas ferramentas estão aqui para ajudá-lo em cada etapa do processo."
-    },
-    "routes": {
-      "title": "Explorar Rotas",
-      "description": "Explore várias visualizações para uma rota específica com nosso conjunto de ferramentas. Obtenha insights e planeje sua viagem de forma eficiente."
-    },
-    "api_playground": {
-      "title": "Desenvolvedor",
-      "description": "Teste os endpoints da API do Seats.aero e visualize a resposta em nosso playground interativo."
-    },"trip_planner": {
-      "title": "Planejador de Viagens",
-      "description": "Visualize facilmente a disponibilidade de múltiplas rotas simultaneamente, simplificando o processo de planejamento da sua viagem."
-    },
-    "deep_link": {
-      "title": "Link Direto",
-      "description": "Defina seus parâmetros de pesquisa uma vez e obtenha links diretos instantâneos para os resultados da pesquisa em vários programas de fidelidade."
-    },
-     "calculators": {
-      "title": "Calculadoras",
-      "description": "Explore nossas calculadoras que facilitam todos os cálculos no mundo dos pontos e milhas, ajudando você a maximizar suas recompensas de viagem."
+    "pt": {
+      "section": {
+        "title": "Nossas ferramentas",
+        "subtitle": "Se você deseja maximizar seus pontos e milhas, encontrar as melhores disponibilidades de voos ou planejar sua próxima viagem, nossas ferramentas estão aqui para ajudá-lo em cada etapa do processo."
+      },
+      "routes": {
+        "title": "Explorar Rotas",
+        "description": "Ache de forma fácil a rota que você deseja. Nós fornecemos disponibilidades anuais, diversos filtros, várias formas de visualização e muito mais."
+      },
+      "api_playground": {
+        "title": "Desenvolvedor",
+        "description": "Teste os endpoints da API do Seats.aero e visualize a resposta em nosso playground interativo."
+      },
+      "trip_planner": {
+        "title": "Planejador de Viagens",
+        "description": "Planeja a melhor rota para sua viagem, visualizando múltiplos trechos simultaneamente. Encontre conexões e tenha todas as opções em um só lugar."
+      },
+      "deep_link": {
+        "title": "Link Direto",
+        "description": "Digite as informações da passagem que deseja, e nossa ferramenta cria links diretos para todos os programas de fidelidade. Assim, você pode comparar rapidamente as opções e encontrar a melhor opção!"
+      },
+      "calculators": {
+        "title": "Calculadoras",
+        "description": "Descubra se é melhorutilizar suas milhas ou pagar em dinheiro, escolher entre compra bonificada ou cashback. Tudo o que você precisa para maximar seus pontos."
+      }
     }
   }
-}
 </i18n>

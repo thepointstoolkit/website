@@ -19,8 +19,5 @@
     <NavigationLink :to="localePath('/sponsors')">
       {{ $t("menu.sponsors") }}
     </NavigationLink>
-    <NavigationLink :to="localePath('/contributing')">
-      {{ $t("menu.contributing") }}
-    </NavigationLink>
   </div>
 </template>

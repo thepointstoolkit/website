@@ -6,9 +6,7 @@
             class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
             {{ t('section.title') }}
           </h2>
-          <p class="mt-1 hidden md:block text-gray-600 dark:text-neutral-400">
-            {{ t('section.subtitle') }}
-          </p>
+
         </div>
       </div>
       <div class="md:col-span-3">
@@ -35,8 +33,7 @@ const { t } = useI18n({
 <i18n lang="json">{
   "en": {
     "section": {
-      "title": "Frequently asked questions",
-      "subtitle": "Answers to the most frequently asked questions."
+      "title": "Frequently asked questions"
     },
     "faqs": [
       {
@@ -59,25 +56,24 @@ const { t } = useI18n({
   },
   "pt": {
     "section": {
-      "title": "Dúvidas Frequentes",
-      "subtitle": "Respostas às perguntas mais frequentes."
+      "title": "Dúvidas Frequentes"
     },
     "faqs": [
       {
         "question": "O que é o The Points Toolkit?",
-        "answer": "O The Points Toolkit é o seu site definitivo para otimizar viagens com pontos. Oferecemos um conjunto de ferramentas projetadas para ajudar você a maximizar seus pontos e milhas, tornando o planejamento de suas viagens mais fácil e recompensador."
+        "answer": "O The Points Toolkit é o seu site definitivo para otimizar viagens com pontos e milhas. Oferecemos várias ferramentas projetadas para ajudar você a maximizar seus pontos e milhas, tornando o planejamento de suas viagens mais fácil e sem muito esforço."
       },
       {
         "question": "O The Points Toolkit é gratuito para usar?",
-        "answer": "Sim, o The Points Toolkit é completamente gratuito para usar. No entanto, observe que algumas ferramentas podem exigir integração com aplicativos de terceiros que possuem suas próprias taxas de assinatura, como o Seats.aero."
+        "answer": "Sim, o The Points Toolkit é completamente gratuito para usar. No entanto, algumas ferramentas podem exigir integração com aplicativos de terceiros que possuem suas próprias taxas de assinatura, como o Seats.aero."
       },
       {
         "question": "Como posso contribuir com o The Points Toolkit?",
-        "answer": "Agradecemos as contribuições da nossa comunidade! Seja você tenha ideias para novos recursos, encontre bugs ou queira fornecer feedback, você pode se envolver."
+        "answer": "Agradecemos as contribuições com a nossa comunidade! Caso você tenha ideias para novos recursos, ache bugs ou queira fornecer qualquer outro feedback, pode entrar em contato com a gente."
       },
       {
         "question": "Como começo a usar o The Points Toolkit?",
-        "answer": "Começar é fácil! Você não precisa criar uma conta. Basta configurar suas integrações com os aplicativos de terceiros que você usa e começar a explorar nossas ferramentas para planejar sua próxima viagem com pontos."
+        "answer": "Começar é super fácil! Você não precisa nem criar uma conta. Basta configurar suas integrações com os aplicativos de terceiros que nós temos parceria. Assim você já começa a explorar nossas ferramentas para planejar sua próxima viagem com pontos e milhas."
       }
 
     ]

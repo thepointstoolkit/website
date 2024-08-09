@@ -52,7 +52,7 @@ const { t } = useI18n({
   },
   "pt": {
     "hero": {
-      "title": "Todas as ferramentas que você precisa para otimizar seus pontos e milhas, tornando seu planejamento de viagem perfeito e gratificante.",
+      "title": "Todas as ferramentas que você precisa para otimizar seus pontos e milhas, tornando seu planejamento de viagem perfeito e sem precisar de tanto esforço.",
       "cta": "Começe Agora",
       "configure": "Configure suas ferramentas"
     }
