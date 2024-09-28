@@ -35,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n()
 import { useLoyaltyProgramDeepLink } from '@/composables/useLoyaltyProgramDeepLink';
 
 const { generateDeepLink } = useLoyaltyProgramDeepLink();
@@ -71,12 +72,12 @@ const deepLink = computed(() => {
   }
 
   return generateDeepLink(props.program, {
-    origin: props.origin,
-    destination: props.destination,
+    origin: props.origin?.toUpperCase(),
+    destination: props.destination?.toUpperCase(),
     departureDate: props.departure,
     returnDate: props.return,
     cabin: props.cabin,
-  })
+  }, locale.value)
 
 });
 </script>

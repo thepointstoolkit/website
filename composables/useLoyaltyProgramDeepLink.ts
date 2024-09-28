@@ -17,10 +17,12 @@ export const useLoyaltyProgramDeepLink = () => {
   const searchingForPremiumCabin = (props): boolean => {
     return premiumCabins.includes(props.cabin);
   }
-  const generateAAdvantageLink = (props: DeepLinkProps): string => {
+  const generateAAdvantageLink = (props: DeepLinkProps, lang: string): string => {
+    console.log(lang);
     const isPremiumCabin = searchingForPremiumCabin(props)
-    const url = "https://www.aa.com.br/booking/search";
+    let url = "https://www.aa.com/booking/search"
     let tripType = 'OneWay'
+    let locale = 'en_US'
     const slices = [
       {
         orig: props.origin,
@@ -42,8 +44,13 @@ export const useLoyaltyProgramDeepLink = () => {
       })
     }
 
+    if (lang == 'pt') {
+      url = "https://www.aa.com.br/booking/search"
+      locale = "pt_BR"
+    }
+
     const params = new URLSearchParams({
-      locale: 'pt_BR',
+      locale: locale,
       pax: '1',
       adult: '1',
       type: tripType,
@@ -56,7 +63,7 @@ export const useLoyaltyProgramDeepLink = () => {
     return `${url}?${params.toString()}`;
   };
 
-  const generateAeroplanLink = (props: DeepLinkProps): string => {
+  const generateAeroplanLink = (props: DeepLinkProps, lang: string): string => {
     const url = "https://www.aircanada.com/aeroplan/redeem/availability/outbound";
     const params = new URLSearchParams({
       org0: props.origin, // Origin airport code
@@ -78,7 +85,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // ConnectMiles
-  const generateConnectMilesLink = (props: DeepLinkProps): string => {
+  const generateConnectMilesLink = (props: DeepLinkProps, lang: string): string => {
     // if (props.airlines?.includes('Emirates')) {
     //   return 'tel:08008862672';
     // }
@@ -101,7 +108,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // ClubPremier
-  const generateClubPremierLink = (props: DeepLinkProps): string => {
+  const generateClubPremierLink = (props: DeepLinkProps, lang: string): string => {
     const url = "https://vuelaconpuntos.aeromexicorewards.com/FlightSelection";
     const params = new URLSearchParams({
     });
@@ -109,7 +116,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // ExecutiveClub
-  const generateExecutiveClubLink = (props: DeepLinkProps): string => {
+  const generateExecutiveClubLink = (props: DeepLinkProps, lang: string): string => {
     const url = "https://www.britishairways.com/travel/redeem/execclub/_gf/en_pt";
     let departureDate: Date | null = null;
 
@@ -149,7 +156,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // EtihadGuest
-  const generateEtihadGuest = (props: DeepLinkProps): string => {
+  const generateEtihadGuest = (props: DeepLinkProps, lang: string): string => {
     const url = "https://digital.etihad.com/book/search";
     const params = new URLSearchParams({
       LANGUAGE: 'EN',
@@ -173,7 +180,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // FinnairPlus
-  const generateFinnairPlusLink = (props: DeepLinkProps): string => {
+  const generateFinnairPlusLink = (props: DeepLinkProps, lang: string): string => {
     const url = "https://www.finnair.com/en/booking/flight-selection";
     const isPremiumCabin = searchingForPremiumCabin(props)
     const json = {
@@ -208,27 +215,32 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // FlyingBlue
-  const generateFlyingBlueLink = (props: DeepLinkProps): string => {
-    const url = "https://wwws.airfrance.us/search/offers";
+  const generateFlyingBlueLink = (props: DeepLinkProps, lang: string): string => {
+    let url = "https://wwws.airfrance.us/search/offers";
+
+    if (lang == 'pt') {
+      url = "https://wwws.airfrance.com.br/search/offers"
+    }
+
     const isPremiumCabin = searchingForPremiumCabin(props)
     const params = new URLSearchParams({
       activeConnection: '0',
       bookingFlow: 'REWARD',
       cabinClass: isPremiumCabin ? 'BUSINESS' : 'ECONOMY',
       pax: '1:0:0:0:0:0:0:0',
-      connections: `${props.origin.toUpperCase()}:C:${props.departureDate.replace(/-/g, '')}>${props.destination.toUpperCase()}`,
+      connections: `${props.origin}:C:${props.departureDate.replace(/-/g, '')}>${props.destination}`,
     });
 
     if (props.returnDate != "") {
       let connections = params.get('connections') ?? ''
-      connections += `:A-${props.destination.toUpperCase()}:A:${props.returnDate.replace(/-/g, '')}>${props.origin.toUpperCase()}:A`
+      connections += `:A-${props.destination}:A:${props.returnDate.replace(/-/g, '')}>${props.origin}:A`
       params.set("connections", connections)
     }
     return `${url}?${params.toString()}`;
   };
 
   // IberiaPlus
-  const generateIberiaPlusLink = (props: DeepLinkProps): string => {
+  const generateIberiaPlusLink = (props: DeepLinkProps, lang: string): string => {
     let departureDate: Date | null = null;
 
     departureDate = parse(props.departureDate, 'yyyy-MM-dd', new Date())
@@ -248,8 +260,8 @@ export const useLoyaltyProgramDeepLink = () => {
       initializedOMB: 'true',
       flexible: 'false',
       TRIP_TYPE: returnDate ? "2" : '1',
-      BEGIN_CITY_01: props.origin.toUpperCase(),
-      END_CITY_01: props.destination.toUpperCase(),
+      BEGIN_CITY_01: props.origin,
+      END_CITY_01: props.destination,
       BEGIN_DAY_01: format(departureDate, "dd"),
       BEGIN_MONTH_01: format(departureDate, "yyyyMM"),
       BEGIN_YEAR_01: format(departureDate, "yyyy"),
@@ -269,12 +281,16 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // LatamPass
-  const generateLatamPassLink = (props: DeepLinkProps): string => {
-    const url = "https://www.latamairlines.com/br/pt/oferta-voos";
+  const generateLatamPassLink = (props: DeepLinkProps, lang: string): string => {
+    let url = "https://www.latamairlines.com/us/en/flight-offers";
+    if (lang == 'pt') {
+      url = "https://www.latamairlines.com/br/pt/oferta-voos"
+    }
+
     const params = new URLSearchParams({
-      origin: props.origin.toUpperCase(),
+      origin: props.origin,
       outbound: props.departureDate + "T12:00:00.000Z",
-      destination: props.destination.toUpperCase(),
+      destination: props.destination,
       adt: '1',
       chd: '0',
       inf: '0',
@@ -291,8 +307,12 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // MileagePlus
-  const generateMileagePlusLink = (props: DeepLinkProps): string => {
-    const url = "https://www.united.com/en/us/fsr/choose-flights";
+  const generateMileagePlusLink = (props: DeepLinkProps, lang: string): string => {
+    let url = "https://www.united.com/en/us/fsr/choose-flights";
+    if (lang == 'pt') {
+      url = "https://www.united.com/pt/br/fsr/choose-flights"
+    }
+
     const params = new URLSearchParams({
       at: '1',
       cbm: '-1',
@@ -321,7 +341,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // MilesAndGo
-  const generateMilesAndGoLink = (props: DeepLinkProps): string => {
+  const generateMilesAndGoLink = (props: DeepLinkProps, lang: string): string => {
     const url = "https://booking.flytap.com/booking/flights/deeplink";
     const params = new URLSearchParams({
       origin: props.origin,
@@ -346,7 +366,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // PrivilegeClub
-  const generatePrivilegeClubLink = (props: DeepLinkProps): string => {
+  const generatePrivilegeClubLink = (props: DeepLinkProps, lang: string): string => {
     const url = "https://booking.qatarairways.com/nsp/views/showBooking.action";
     const params = new URLSearchParams({
       widget: 'QR',
@@ -378,7 +398,7 @@ export const useLoyaltyProgramDeepLink = () => {
   };
 
   // Smiles
-  const generateSmilesLink = (props: DeepLinkProps): string => {
+  const generateSmilesLink = (props: DeepLinkProps, lang: string): string => {
     const url = "https://www.smiles.com.br/mfe/emissao-passagem/";
     const isPremiumCabin = searchingForPremiumCabin(props)
     const departureDate = parse(props.departureDate, 'yyyy-MM-dd', new Date())
@@ -435,7 +455,7 @@ export const useLoyaltyProgramDeepLink = () => {
     return interlineLink;
   };
 
-  function generateAlaskaMileagePlanLink(props: DeepLinkProps): string {
+  function generateAlaskaMileagePlanLink(props: DeepLinkProps, lang: string): string {
     const url = "https://www.alaskaair.com/search/results";
     const isPremiumCabin = searchingForPremiumCabin(props)
     const params = new URLSearchParams({
@@ -454,12 +474,12 @@ export const useLoyaltyProgramDeepLink = () => {
 
     return `${url}?${params.toString()}`;
   }
-  function generateCopaConnectMilesLink(props: DeepLinkProps): string {
+  function generateCopaConnectMilesLink(props: DeepLinkProps, lang: string): string {
     const url = "https://shopping.copaair.com/miles";
     const params = new URLSearchParams({
       roundtrip: props.returnDate != "" ? "true" : "false",
-      area1: props.origin.toUpperCase(),
-      area2: props.destination.toUpperCase(),
+      area1: props.origin,
+      area2: props.destination,
       date1: props.departureDate,
       date2: props.returnDate,
       flexible_dates_v2: "false",
@@ -470,14 +490,17 @@ export const useLoyaltyProgramDeepLink = () => {
       advanced_air_search: "false",
       stopover: "false",
       sf: "gs",
-      langid: "en",
+      langid: lang,
       promocode: "",
     });
 
     return `${url}?${params.toString()}`;
   }
-  function generateDeltaSkyMiles(props: DeepLinkProps): string {
-    const url = "https://www.delta.com/flight-search/search";
+  function generateDeltaSkyMiles(props: DeepLinkProps, lang: string): string {
+    let url = "https://www.delta.com/flight-search/search";
+    if (lang == 'pt') {
+      url = "https://pt.delta.com/flight-search/search"
+    }
 
     const departureDate = parse(props.departureDate, 'yyyy-MM-dd', new Date())
 
@@ -495,8 +518,8 @@ export const useLoyaltyProgramDeepLink = () => {
       "passengerInfo": "ADT:1",
       "priceSchedule": "price",
       "awardTravel": "true",
-      "originCity": props.origin.toUpperCase(),
-      "destinationCity": props.destination.toUpperCase(),
+      "originCity": props.origin,
+      "destinationCity": props.destination,
       "departureDate": format(departureDate, 'MM/dd/yyyy'),
       "returnDate": returnDate ? format(returnDate, 'MM/dd/yyyy') : "",
       "forceMiles": "true",
@@ -504,7 +527,7 @@ export const useLoyaltyProgramDeepLink = () => {
 
     return `${url}?${params.toString()}`;
   }
-  function generateJetBlueTrueBlue(props: DeepLinkProps): string {
+  function generateJetBlueTrueBlue(props: DeepLinkProps, lang: string): string {
     const url = "https://www.jetblue.com/booking/flights";
     const params = new URLSearchParams({
       "from": props.origin,
@@ -527,7 +550,7 @@ export const useLoyaltyProgramDeepLink = () => {
     return `${url}?${params.toString()}`;
   }
 
-  function generateSASEurobonus(props: DeepLinkProps): string {
+  function generateSASEurobonus(props: DeepLinkProps, lang: string): string {
     const url = "https://www.flysas.com/en/book/flights";
     let tripType = "OW"
     let returnDate = ""
@@ -535,7 +558,7 @@ export const useLoyaltyProgramDeepLink = () => {
       tripType = "RT";
       returnDate = `-${props.returnDate.replace(/-/g, '')}`
     }
-    const searchString = `${tripType}_${props.origin.toUpperCase()}-${props.destination.toUpperCase()}-${props.departureDate.replace(/-/g, '')}${returnDate}_a1c0i0y0`
+    const searchString = `${tripType}_${props.origin}-${props.destination}-${props.departureDate.replace(/-/g, '')}${returnDate}_a1c0i0y0`
     const params = new URLSearchParams({
       "search": searchString,
       "view": "upsell",
@@ -548,7 +571,7 @@ export const useLoyaltyProgramDeepLink = () => {
     return `${url}?${params.toString()}`;
   }
 
-  function generateVirginAtlanticFlyingClub(props: DeepLinkProps): string {
+  function generateVirginAtlanticFlyingClub(props: DeepLinkProps, lang: string): string {
 
     const url = "https://www.virginatlantic.com/flight-search/search";
     const departureDate = parse(props.departureDate, 'yyyy-MM-dd', new Date())
@@ -567,8 +590,8 @@ export const useLoyaltyProgramDeepLink = () => {
       "passengerInfo": "ADT:1|GBE:0|CNN:0|INF:0",
       "priceSchedule": "price",
       "awardTravel": "true",
-      "originCity": props.origin.toUpperCase(),
-      "destinationCity": props.destination.toUpperCase(),
+      "originCity": props.origin,
+      "destinationCity": props.destination,
       "departureDate": format(departureDate, 'MM/dd/yyyy'),
       "returnDate": returnDate ? format(returnDate, 'MM/dd/yyyy') : "",
       "forceMiles": "true",
@@ -577,9 +600,9 @@ export const useLoyaltyProgramDeepLink = () => {
     return `${url}?${params.toString()}`;
   }
 
-  function generateVirginAustraliaVelocity(props: DeepLinkProps): string {
+  function generateVirginAustraliaVelocity(props: DeepLinkProps, lang: string): string {
 
-const url = "https://book.virginaustralia.com/dx/VADX/#/date-selection";
+    const url = "https://book.virginaustralia.com/dx/VADX/#/date-selection";
     const departureDate = parse(props.departureDate, 'yyyy-MM-dd', new Date())
 
     let returnDate: Date | null = null;
@@ -587,7 +610,7 @@ const url = "https://book.virginaustralia.com/dx/VADX/#/date-selection";
       returnDate = parse(props.returnDate, 'yyyy-MM-dd', new Date())
     }
     const params = new URLSearchParams({
-      "journeyType": returnDate ? "round-trip":"one-way",
+      "journeyType": returnDate ? "round-trip" : "one-way",
       "activeMonth": format(departureDate, "MM-dd-yyyy"),
       "date": format(departureDate, "MM-dd-yyyy"),
       "awardBooking": "true",
@@ -596,12 +619,12 @@ const url = "https://book.virginaustralia.com/dx/VADX/#/date-selection";
       "ADT": "1",
       "CHD": "0",
       "INF": "0",
-      "origin": props.origin.toUpperCase(),
-      "destination": props.destination.toUpperCase(),
+      "origin": props.origin,
+      "destination": props.destination,
       "promoCode": "",
       "direction": "0",
     });
-    if(returnDate) {
+    if (returnDate) {
       params.set('date1', format(returnDate, "MM-dd-yyyy"))
     }
 
@@ -609,54 +632,54 @@ const url = "https://book.virginaustralia.com/dx/VADX/#/date-selection";
     return `${url}?${params.toString()}`;
   }
 
-  const generateDeepLink = (program: string, props: DeepLinkProps): string => {
+  const generateDeepLink = (program: string, props: DeepLinkProps, lang: string): string => {
     switch (program) {
       case 'AAdvantage':
-        return generateAAdvantageLink(props);
+        return generateAAdvantageLink(props, lang)
       case 'Aeroplan':
-        return generateAeroplanLink(props)
+        return generateAeroplanLink(props, lang)
       case 'ConnectMiles':
-        return generateConnectMilesLink(props)
+        return generateConnectMilesLink(props, lang)
       case 'ClubPremier':
-        return generateClubPremierLink(props)
+        return generateClubPremierLink(props, lang)
       case 'EtihadGuest':
-        return generateEtihadGuest(props)
+        return generateEtihadGuest(props, lang)
       case 'ExecutiveClub':
-        return generateExecutiveClubLink(props)
+        return generateExecutiveClubLink(props, lang)
       case 'FinnairPlus':
-        return generateFinnairPlusLink(props)
+        return generateFinnairPlusLink(props, lang)
       case 'FlyingBlue':
-        return generateFlyingBlueLink(props)
+        return generateFlyingBlueLink(props, lang)
       case 'IberiaPlus':
-        return generateIberiaPlusLink(props)
+        return generateIberiaPlusLink(props, lang)
       case 'LatamPass':
-        return generateLatamPassLink(props)
+        return generateLatamPassLink(props, lang)
       case 'MileagePlus':
-        return generateMileagePlusLink(props)
+        return generateMileagePlusLink(props, lang)
       case 'MilesAndGo':
-        return generateMilesAndGoLink(props)
+        return generateMilesAndGoLink(props, lang)
       case 'PrivilegeClub':
-        return generatePrivilegeClubLink(props)
+        return generatePrivilegeClubLink(props, lang)
       case 'Smiles':
-        return generateSmilesLink(props)
+        return generateSmilesLink(props, lang)
       case 'AzulFidelidade':
         return generateAzulFidelidadeLink(props, false)
       case 'AzulFidelidadeBusiness':
         return generateAzulFidelidadeLink(props, true)
       case 'AlaskaMileagePlan':
-        return generateAlaskaMileagePlanLink(props)
+        return generateAlaskaMileagePlanLink(props, lang)
       case 'CopaConnectMiles':
-        return generateCopaConnectMilesLink(props)
+        return generateCopaConnectMilesLink(props, lang)
       case 'DeltaSkyMiles':
-        return generateDeltaSkyMiles(props)
+        return generateDeltaSkyMiles(props, lang)
       case 'JetBlueTrueBlue':
-        return generateJetBlueTrueBlue(props)
+        return generateJetBlueTrueBlue(props, lang)
       case 'SASEurobonus':
-        return generateSASEurobonus(props)
+        return generateSASEurobonus(props, lang)
       case 'VirginAtlanticFlyingClub':
-        return generateVirginAtlanticFlyingClub(props)
+        return generateVirginAtlanticFlyingClub(props, lang)
       case 'VirginAustraliaVelocity':
-        return generateVirginAustraliaVelocity(props)
+        return generateVirginAustraliaVelocity(props, lang)
       default:
         throw new Error(`No method found for program: ${program}`);
     }
