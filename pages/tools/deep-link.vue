@@ -26,14 +26,14 @@ useSeoMeta({
 {
   "en": {
     "seo": {
-      "title": "Yearly Calendar",
-      "description": "Discover a yearly calendar of availability for your desired route. Plan your travels with ease by viewing all available dates at a glance.",
+  "title": "Direct Link",
+  "description": "Enter the flight details you want, and our tool creates direct links for all loyalty programs. Quickly compare options and find the best deal!"
     }
   },
   "pt": {
     "seo": {
-      "title": "Calendário Anual",
-      "description": "Descubra um calendário anual de disponibilidade para a rota desejada. Planeje suas viagens com facilidade visualizando todas as datas disponíveis de uma vez."
+      "title": "Link Direto",
+      "description": "Digite as informações da passagem que deseja, e nossa ferramenta cria links diretos para todos os programas de fidelidade. Assim, você pode comparar rapidamente as opções e encontrar a melhor opção!"
     }
   }
 }
