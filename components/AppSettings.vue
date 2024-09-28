@@ -37,7 +37,8 @@
           </div>
         </div>
         <SectionDivider class="font-bold mt-4">Seats.aero API</SectionDivider>
-        <Alert type="warning" :title="t('seats.title')" class="mb-4">
+        <Alert type="warning" :title="t('seats.title')" class="mb-4"
+          v-show="apiKey == ''">
           <p>{{ t('seats.body') }}</p>
           <p>{{ t('seats.referral') }} <a
               :href="config.public.seatsAeroReferralLink ?? 'https://seats.aero/'"
@@ -47,6 +48,14 @@
           <p>{{ t('seats.account') }} <a href="https://seats.aero/apikey"
               target="_blank" class="font-bold hover:underline">{{
               $t('strings.here') }}.</a>
+          </p>
+        </Alert>
+
+        <Alert type="success" :title="t('tools.title')" class="mb-4"
+          v-show="apiKey != ''">
+          <p>{{ t('tools.body') }} <NuxtLink to="/tools"
+              class="font-bold hover:underline">{{
+              $t('strings.here') }}.</NuxtLink>
           </p>
         </Alert>
         <div class="flex flex-col gap-4 ">
@@ -61,6 +70,10 @@
 </template>
 <script setup>
 
+import { useSeatsAeroApiStore } from '@/stores/seatsAeroApi'
+
+const store = useSeatsAeroApiStore()
+const { apiKey } = storeToRefs(store)
 const config = useRuntimeConfig()
 
 const { t } = useI18n({
@@ -84,6 +97,10 @@ const { t } = useI18n({
       "body": "To obtain a Seat.aero API key, you must have a Seat.aero Pro subscription.",
       "referral": "If you don't have one, you can subscribe using our",
       "account": "If you already have a subscription, you can get the API key"
+    },
+    "tools": {
+      "title": "Seats.aero API configured correctly",
+      "body": "You can start using our tools now. To check all available tools click"
     }
   },
   "pt": {
@@ -101,6 +118,10 @@ const { t } = useI18n({
       "body": "Para obter uma chave de API do Seat.aero, você deve ter uma assinatura Seat.aero Pro.",
       "referral": "Se você não tiver uma, pode se inscrever usando nosso",
       "account": "Se você já tem uma assinatura, pode obter a chave de API"
+    },
+    "tools": {
+      "title": "Chave API Seats.aero configurada corretamente",
+      "body": "Você pode começar a usar nossas ferramentas agora. Para ver todas as ferramentas disponíveis, clique"
     }
   }
 }

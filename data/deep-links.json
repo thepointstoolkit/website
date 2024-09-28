@@ -1,0 +1,149 @@
+{
+  "AAdvantage": {
+    "name": "AAdvantage",
+    "alliance": "Oneworld",
+    "airlines": [],
+    "logo": "/loyalty_program/aadvantage.svg",
+    "authRequired": false
+  },
+  "Aeroplan": {
+    "name": "Aeroplan",
+    "alliance": "Star Alliance",
+    "airlines": [],
+    "logo": "/loyalty_program/aeroplan.svg",
+    "authRequired": false
+  },
+  "AlaskaMileagePlan": {
+    "name": "Alaska Mileage Plan",
+    "alliance": "Oneworld",
+    "airlines": [],
+    "logo": "/loyalty_program/alaska.png",
+    "authRequired": false
+  },
+  "AzulFidelidade": {
+    "name": "Azul Fidelidade",
+    "alliance": "",
+    "airlines": [],
+    "logo": "/loyalty_program/tudo_azul.svg",
+    "authRequired": false
+  },
+  "AzulFidelidadeBusiness": {
+    "name": "Azul Fidelidade Business",
+    "alliance": "",
+    "airlines": [],
+    "logo": "/loyalty_program/tudo_azul.svg",
+    "authRequired": false
+  },
+  "ConnectMiles": {
+    "name": "ConnectMiles",
+    "alliance": "Star Alliance",
+    "airlines": [],
+    "logo": "/loyalty_program/connect_miles.svg",
+    "authRequired": false
+  },
+  "DeltaSkyMiles": {
+    "name": "Delta SkyMiles",
+    "alliance": "SkyTeam",
+    "airlines": [],
+    "logo": "/loyalty_program/delta_skymiles.png",
+    "authRequired": false
+  },
+  "EtihadGuest": {
+    "name": "Etihad Guest",
+    "alliance": "",
+    "airlines": [],
+    "logo": "/loyalty_program/etihad_guest.svg",
+    "authRequired": false
+  },
+  "ExecutiveClub": {
+    "name": "Executive Club",
+    "alliance": "Oneworld",
+    "airlines": [],
+    "logo": "/loyalty_program/executive_club.svg",
+    "authRequired": true
+  },
+  "FinnairPlus": {
+    "name": "Finnair Plus",
+    "alliance": "Oneworld",
+    "airlines": [],
+    "logo": "/loyalty_program/finnair_plus.svg",
+    "authRequired": true
+  },
+  "FlyingBlue": {
+    "name": "Flying Blue",
+    "alliance": "SkyTeam",
+    "airlines": [],
+    "logo": "/loyalty_program/flying_blue.svg",
+    "authRequired": true
+  },
+  "IberiaPlus": {
+    "name": "Iberia Plus",
+    "alliance": "Oneworld",
+    "airlines": [],
+    "logo": "/loyalty_program/iberia_plus.svg",
+    "authRequired": true
+  },
+  "JetBlueTrueBlue": {
+    "name": "JetBlue TrueBlue",
+    "alliance": "",
+    "airlines": [],
+    "logo": "/loyalty_program/jetblue_trueblue.png",
+    "authRequired": false
+  },
+  "LatamPass": {
+    "name": "LatamPass",
+    "alliance": "",
+    "airlines": [],
+    "logo": "/loyalty_program/latampass.svg",
+    "authRequired": true
+  },
+  "MileagePlus": {
+    "name": "Mileage Plus",
+    "alliance": "Star Alliance",
+    "airlines": [],
+    "logo": "/loyalty_program/mileage_plus.svg",
+    "authRequired": false
+  },
+  "MilesAndGo": {
+    "name": "Miles&Go",
+    "alliance": "Star Alliance",
+    "airlines": [],
+    "logo": "/loyalty_program/miles_and_go.svg",
+    "authRequired": true
+  },
+  "PrivilegeClub": {
+    "name": "Privilege Club",
+    "alliance": "Oneworld",
+    "airlines": [],
+    "logo": "/loyalty_program/privilege_club.svg",
+    "authRequired": true
+  },
+  "SASEurobonus": {
+    "name": "SAS Eurobonus",
+    "alliance": "SkyTeam",
+    "airlines": [],
+    "logo": "/loyalty_program/sas.png",
+    "authRequired": false
+  },
+  "Smiles": {
+    "name": "Smiles",
+    "alliance": "",
+    "airlines": [],
+    "logo": "/loyalty_program/smiles.svg",
+    "authRequired": false
+  },
+  "VirginAtlanticFlyingClub": {
+    "name": "Virgin Atlantic Flying Club",
+    "alliance": "SkyTeam",
+    "airlines": [],
+    "logo": "/loyalty_program/virgin_atlantic_flying_club.png",
+    "authRequired": false
+  },
+  "VirginAustraliaVelocity": {
+    "name": "Virgin Australia Velocity",
+    "alliance": "",
+    "airlines": [],
+    "logo": "/loyalty_program/virgin_australia.png",
+    "authRequired": false
+  }
+}
