@@ -3,9 +3,11 @@ import { i18n } from './config'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   plugins: [
     '~/plugins/preline.client.ts',
   ],
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
@@ -14,10 +16,12 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     '@nuxtjs/i18n',
   ],
+
   tailwindcss: {
     exposeConfig: true,
     viewer: true,
   },
+
   routeRules: {
     '/': { prerender: true },
     '/api/*': {
@@ -25,6 +29,7 @@ export default defineNuxtConfig({
     },
     '/tools/routes/yearly-calendar': { redirect: '/tools/yearly-calendar' },
   },
+
   runtimeConfig: {
     seatsAeroApiToken: process.env.SEATSAERO_API_TOKEN,
     public: {
@@ -36,13 +41,18 @@ export default defineNuxtConfig({
       },
     },
   },
+
   gtag: {
     id: process.env.GTAG_ID,
   },
+
   i18n,
+
   eslint: {
     config: {
       stylistic: true,
     },
   },
+
+  compatibilityDate: '2024-09-28',
 })
