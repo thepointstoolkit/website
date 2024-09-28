@@ -1,11 +1,12 @@
+import { useLocalStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
-import { useStorage } from '@vueuse/core'
+
 export const useSeatsAeroApiStore = defineStore('app', {
   state: () => ({
-    apiKey: useStorage('seatsaero-apiKey', ''),
-    rateLimitLimit: useStorage('seatsaero-rateLimit-limit', 1000),
-    rateLimitRemaining: useStorage('seatsaero-rateLimit-remaining', 1000),
-    rateLimitReset: useStorage('seatsaero-rateLimit-reset', 0),
+    apiKey: useLocalStorage('seatsaero-apiKey', ''),
+    rateLimitLimit: useLocalStorage('seatsaero-rateLimit-limit', 1000),
+    rateLimitRemaining: useLocalStorage('seatsaero-rateLimit-remaining', 1000),
+    rateLimitReset: useLocalStorage('seatsaero-rateLimit-reset', 0),
   }),
   persist: true,
   actions: {
