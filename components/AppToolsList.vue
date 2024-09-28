@@ -1,6 +1,8 @@
 <template>
-
-  <SectionTitle :title="t('section.title')" :subtitle="t('section.subtitle')" />
+  <SectionTitle
+    :title="t('section.title')"
+    :subtitle="t('section.subtitle')"
+  />
   <CardLinkList>
     <CardLink :to="localePath('/tools/yearly-calendar')">
       <template #title>
@@ -8,8 +10,11 @@
       </template>
       {{ t("yearly_calendar.description") }}
       <template #leading>
-        <Icon name="tabler:calendar-month" size="1.5em"
-          class="text-gray-800 dark:text-neutral-200" />
+        <Icon
+          name="tabler:calendar-month"
+          size="1.5em"
+          class="text-gray-800 dark:text-neutral-200"
+        />
       </template>
     </CardLink>
 
@@ -19,8 +24,11 @@
       </template>
       {{ t("deep_link.description") }}
       <template #leading>
-        <Icon name="tabler:link" size="1.5em"
-          class="text-gray-800 dark:text-neutral-200" />
+        <Icon
+          name="tabler:link"
+          size="1.5em"
+          class="text-gray-800 dark:text-neutral-200"
+        />
       </template>
     </CardLink>
 
@@ -30,8 +38,11 @@
       </template>
       {{ t("trip_planner.description") }}
       <template #leading>
-        <Icon name="tabler:transform-point-top-right" size="1.5em"
-          class="text-gray-800 dark:text-neutral-200" />
+        <Icon
+          name="tabler:transform-point-top-right"
+          size="1.5em"
+          class="text-gray-800 dark:text-neutral-200"
+        />
       </template>
       <CardLinkBadge>{{ t("strings.soon") }}</CardLinkBadge>
     </CardLink>
@@ -41,12 +52,14 @@
       </template>
       {{ t("calculators.description") }}
       <template #leading>
-        <Icon name="tabler:calculator" size="1.5em"
-          class="text-gray-800 dark:text-neutral-200" />
+        <Icon
+          name="tabler:calculator"
+          size="1.5em"
+          class="text-gray-800 dark:text-neutral-200"
+        />
       </template>
       <CardLinkBadge>{{ t("strings.soon") }}</CardLinkBadge>
     </CardLink>
-
 
     <CardLink :to="localePath('/tools/api-playground')">
       <template #title>
@@ -54,12 +67,14 @@
       </template>
       {{ t("api_playground.description") }}
       <template #leading>
-        <Icon name="tabler:code" size="1.5em"
-          class="text-gray-800 dark:text-neutral-200" />
+        <Icon
+          name="tabler:code"
+          size="1.5em"
+          class="text-gray-800 dark:text-neutral-200"
+        />
       </template>
     </CardLink>
   </CardLinkList>
-
 </template>
 
 <script setup>
@@ -68,7 +83,8 @@ const { t } = useI18n({
 })
 </script>
 
-<i18n lang="json">{
+<i18n lang="json">
+{
   "en": {
     "section": {
       "title": "Our Tools",

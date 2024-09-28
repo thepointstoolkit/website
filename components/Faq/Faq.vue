@@ -1,36 +1,40 @@
 <template>
-    <div class="grid md:grid-cols-5 gap-10">
-      <div class="md:col-span-2">
-        <div class="max-w-xs">
-          <h2
-            class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
-            {{ t('section.title') }}
-          </h2>
-
-        </div>
-      </div>
-      <div class="md:col-span-3">
-        <div
-          class="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700">
-          <FaqAccordionItem v-for="idx in 4" :key="`faq-${idx}`">
-            <template #title>
-              {{ t(`faqs.${idx-1}.question`) }}
-            </template>
-            <p>{{ t(`faqs.${idx - 1}.answer`) }}</p>
-          </FaqAccordionItem>
-        </div>
+  <div class="grid md:grid-cols-5 gap-10">
+    <div class="md:col-span-2">
+      <div class="max-w-xs">
+        <h2
+          class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white"
+        >
+          {{ t('section.title') }}
+        </h2>
       </div>
     </div>
-
-
+    <div class="md:col-span-3">
+      <div
+        class="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700"
+      >
+        <FaqAccordionItem
+          v-for="idx in 4"
+          :key="`faq-${idx}`"
+        >
+          <template #title>
+            {{ t(`faqs.${idx-1}.question`) }}
+          </template>
+          <p>{{ t(`faqs.${idx - 1}.answer`) }}</p>
+        </FaqAccordionItem>
+      </div>
+    </div>
+  </div>
 </template>
+
 <script setup>
 const { t } = useI18n({
   useScope: 'local',
 })
 </script>
 
-<i18n lang="json">{
+<i18n lang="json">
+{
   "en": {
     "section": {
       "title": "Frequently asked questions"

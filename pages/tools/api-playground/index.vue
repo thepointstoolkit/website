@@ -7,8 +7,11 @@
         </template>
         {{ t('cache_search.description') }}
         <template #leading>
-          <Icon name="tabler:map-search" size="1.5em"
-            class="text-gray-800 dark:text-neutral-200" />
+          <Icon
+            name="tabler:map-search"
+            size="1.5em"
+            class="text-gray-800 dark:text-neutral-200"
+          />
         </template>
       </CardLink>
     </CardLinkList>

@@ -4,7 +4,8 @@
     <div class="bg-white rounded-xl shadow p-4 sm:p-7 dark:bg-neutral-900">
       <div class="text-center mb-8">
         <h2
-          class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-neutral-200">
+          class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-neutral-200"
+        >
           {{ t("section.title") }}
         </h2>
         <p class="text-sm text-gray-600 dark:text-neutral-400">
@@ -12,12 +13,14 @@
         </p>
       </div>
       <div>
-        <SectionDivider class="fw-bold mt-4">{{ t("app.title") }}
+        <SectionDivider class="fw-bold mt-4">
+          {{ t("app.title") }}
         </SectionDivider>
         <div class="grid sm:grid-cols-12 gap-2 sm:gap-6">
           <div class="sm:col-span-3">
             <label
-              class="font-bold inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200">
+              class="font-bold inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
+            >
               {{ t("app.theme") }}
             </label>
           </div>
@@ -28,7 +31,8 @@
           </div>
           <div class="sm:col-span-3">
             <label
-              class="font-bold inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200">
+              class="font-bold inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200"
+            >
               {{ t("app.language") }}
             </label>
           </div>
@@ -36,25 +40,46 @@
             <AppLanguageSelector />
           </div>
         </div>
-        <SectionDivider class="font-bold mt-4">Seats.aero API</SectionDivider>
-        <Alert type="warning" :title="t('seats.title')" class="mb-4"
-          v-show="apiKey == ''">
+        <SectionDivider class="font-bold mt-4">
+          Seats.aero API
+        </SectionDivider>
+        <Alert
+          v-show="apiKey == ''"
+          type="warning"
+          :title="t('seats.title')"
+          class="mb-4"
+        >
           <p>{{ t('seats.body') }}</p>
-          <p>{{ t('seats.referral') }} <a
+          <p>
+            {{ t('seats.referral') }} <a
               :href="config.public.seatsAeroReferralLink ?? 'https://seats.aero/'"
-              target="_blank" class="font-bold hover:underline">{{
+              target="_blank"
+              class="font-bold hover:underline"
+            >{{
               $t('strings.referral_link')
-              }}.</a></p>
-          <p>{{ t('seats.account') }} <a href="https://seats.aero/apikey"
-              target="_blank" class="font-bold hover:underline">{{
+            }}.</a>
+          </p>
+          <p>
+            {{ t('seats.account') }} <a
+              href="https://seats.aero/apikey"
+              target="_blank"
+              class="font-bold hover:underline"
+            >{{
               $t('strings.here') }}.</a>
           </p>
         </Alert>
 
-        <Alert type="success" :title="t('tools.title')" class="mb-4"
-          v-show="apiKey != ''">
-          <p>{{ t('tools.body') }} <NuxtLink to="/tools"
-              class="font-bold hover:underline">{{
+        <Alert
+          v-show="apiKey != ''"
+          type="success"
+          :title="t('tools.title')"
+          class="mb-4"
+        >
+          <p>
+            {{ t('tools.body') }} <NuxtLink
+              to="/tools"
+              class="font-bold hover:underline"
+            >{{
               $t('strings.here') }}.</NuxtLink>
           </p>
         </Alert>
@@ -65,11 +90,10 @@
       </div>
     </div>
   </div>
-  <div>
-  </div>
+  <div />
 </template>
-<script setup>
 
+<script setup>
 import { useSeatsAeroApiStore } from '@/stores/seatsAeroApi'
 
 const store = useSeatsAeroApiStore()
@@ -81,7 +105,8 @@ const { t } = useI18n({
 })
 </script>
 
-<i18n lang="json">{
+<i18n lang="json">
+{
   "en": {
     "section": {
       "title": "Settings",

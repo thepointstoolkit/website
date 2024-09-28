@@ -12,7 +12,7 @@ useHead({
   titleTemplate: (titleChunk: string) => {
     return titleChunk ? `${titleChunk} - ${appName}` : `${appName}`
   },
-  link: [{ rel: 'icon', type: 'image/png', href: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>" }]
+  link: [{ rel: 'icon', type: 'image/png', href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>' }],
 })
 
 const { t } = useI18n({
@@ -22,9 +22,10 @@ const { t } = useI18n({
 useSeoMeta({
   description: t('seo.description'),
 })
-
 </script>
-<i18n lang="json">{
+
+<i18n lang="json">
+{
   "en": {
     "seo": {
       "description": "Your ultimate resource for award travel. All the tools you need to optimize your points and miles, making your travel planning seamless and rewarding. Save time, maximize value, and explore more with ease.",

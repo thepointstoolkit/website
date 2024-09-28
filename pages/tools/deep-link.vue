@@ -1,8 +1,8 @@
 <template>
   <div>
     <DeepLinkForm @submit="updateDeepLinkData" />
+    <DeepLinkList :deep-link-data="formData" />
   </div>
-  <DeepLinkList :deepLinkData="formData"  />
 </template>
 
 <script setup>
@@ -13,7 +13,7 @@ const { t } = useI18n({
 })
 
 function updateDeepLinkData(data) {
-  formData.value = {...data.value}
+  formData.value = { ...data.value }
 }
 
 useSeoMeta({
@@ -22,7 +22,8 @@ useSeoMeta({
 })
 </script>
 
-<i18n lang="json">{
+<i18n lang="json">
+{
   "en": {
     "seo": {
       "title": "Yearly Calendar",
