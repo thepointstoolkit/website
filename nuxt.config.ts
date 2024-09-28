@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     '/api/*': {
       cache: { maxAge: 60 * 15 },
     },
+    '/tools/routes/yearly-calendar': { redirect: '/tools/yearly-calendar' },
   },
   runtimeConfig: {
     seatsAeroApiToken: process.env.SEATSAERO_API_TOKEN,

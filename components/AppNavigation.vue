@@ -7,8 +7,11 @@
         </NuxtLink>
       </DropdownTrigger>
       <DropdownItems>
-        <DropdownItem :to="localePath('/tools/routes')">
-          {{ $t("menu.routes") }}
+        <DropdownItem :to="localePath('/tools/yearly-calendar')">
+          {{ $t("menu.yearly_calendar") }}
+        </DropdownItem>
+        <DropdownItem :to="localePath('/tools/deep-link')">
+          {{ $t("menu.deep_link") }}
         </DropdownItem>
 
         <DropdownItem :to="localePath('/tools/api-playground')">

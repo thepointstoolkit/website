@@ -85,6 +85,8 @@ export default {
           return 'bg-red-50 border-red-200 text-red-800  dark:bg-red-800/10 dark:border-red-900 dark:text-red-500'
         case 'warning':
           return 'bg-yellow-50 border-yellow-200 text-yellow-800  dark:bg-yellow-800/10 dark:border-yellow-900 dark:text-yellow-500'
+        case 'success':
+          return 'bg-teal-50 border-teal-200 text-teal-800  dark:bg-teal-800/10 dark:border-teal-900 dark:text-teal-500'
         default:
           return ''
       }

@@ -2,13 +2,24 @@
 
   <SectionTitle :title="t('section.title')" :subtitle="t('section.subtitle')" />
   <CardLinkList>
-    <CardLink :to="localePath('/tools/routes')">
+    <CardLink :to="localePath('/tools/yearly-calendar')">
       <template #title>
-        {{ t("routes.title") }}
+        {{ t("yearly_calendar.title") }}
       </template>
-      {{ t("routes.description") }}
+      {{ t("yearly_calendar.description") }}
       <template #leading>
-        <Icon name="tabler:route-2" size="1.5em"
+        <Icon name="tabler:calendar-month" size="1.5em"
+          class="text-gray-800 dark:text-neutral-200" />
+      </template>
+    </CardLink>
+
+    <CardLink :to="localePath('/tools/deep-link')">
+      <template #title>
+        {{ t("deep_link.title") }}
+      </template>
+      {{ t("deep_link.description") }}
+      <template #leading>
+        <Icon name="tabler:link" size="1.5em"
           class="text-gray-800 dark:text-neutral-200" />
       </template>
     </CardLink>
@@ -20,18 +31,6 @@
       {{ t("trip_planner.description") }}
       <template #leading>
         <Icon name="tabler:transform-point-top-right" size="1.5em"
-          class="text-gray-800 dark:text-neutral-200" />
-      </template>
-      <CardLinkBadge>{{ t("strings.soon") }}</CardLinkBadge>
-    </CardLink>
-
-    <CardLink>
-      <template #title>
-        {{ t("deep_link.title") }}
-      </template>
-      {{ t("deep_link.description") }}
-      <template #leading>
-        <Icon name="tabler:link" size="1.5em"
           class="text-gray-800 dark:text-neutral-200" />
       </template>
       <CardLinkBadge>{{ t("strings.soon") }}</CardLinkBadge>
@@ -94,6 +93,10 @@ const { t } = useI18n({
     "calculators": {
       "title": "Calculators",
       "description": "Find out whether it's better to use your miles or pay in cash, choose between bonus purchases or cashback. Everything you need to maximize your points."
+    },
+    "yearly_calendar": {
+      "title": "Yearly Calendar",
+      "description": "Discover a yearly calendar of availability for your desired route. Plan your travels with ease by viewing all available dates at a glance."
     }
   },
     "pt": {
@@ -120,6 +123,10 @@ const { t } = useI18n({
       "calculators": {
         "title": "Calculadoras",
         "description": "Descubra se é melhorutilizar suas milhas ou pagar em dinheiro, escolher entre compra bonificada ou cashback. Tudo o que você precisa para maximar seus pontos."
+      },
+      "yearly_calendar": {
+        "title": "Calendário Anual",
+        "description": "Descubra um calendário anual de disponibilidade para a rota desejada. Planeje suas viagens com facilidade visualizando todas as datas disponíveis de relance."
       }
     }
   }

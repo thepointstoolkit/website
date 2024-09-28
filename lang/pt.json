@@ -5,6 +5,7 @@
   },
   "menu": {
     "yearly_calendar": "Calendário Anual",
+    "deep_link": "Link Direto",
     "tools": "Ferramentas",
     "routes": "Rotas",
     "settings": "Configurações",
@@ -15,7 +16,9 @@
   },
   "buttons": {
     "search": "Buscar",
+    "submit": "Enviar",
     "sidebar": "Barra Lateral",
+      "generate": "Gerar",
     "filter_results": "Filtrar Resultados"
   },
   "filters": {
@@ -79,6 +82,20 @@
       "cabin": "Cabine",
       "outbound": "Partida",
       "inbound": "Chegada"
+    }
+  },
+  "deep_link_form": {
+    "labels": {
+      "one_way": "Só Ida",
+      "round_trip": "Ida e Volta",
+      "origin": "Origem",
+      "cabin": "Cabine",
+      "destination": "Destino",
+      "depart": "Partida",
+      "return": "Retorno",
+    },
+    "strings": {
+      "any_cabin": "Qualquer cabine"
     }
   },
   "api_usage": {

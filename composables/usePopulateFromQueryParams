@@ -1,0 +1,28 @@
+import { ref, onMounted, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
+export const usePopulateFromQueryParams = () => {
+  const route = useRoute();
+  const router = useRouter();
+
+  // Function to update form data from URL query parameters
+  const updateFormDataFromQuery = (formData) => {
+    const query = route.query;
+    console.log({ query, formData })
+
+    Object.keys(query).forEach(key => {
+      formData.value[key] = query[key];
+    });
+  };
+
+  // Function to update the URL with new form data and pushState to keep history
+  const updateUrlWithFormData = (formData) => {
+    const newQuery = { ...route.query, ...formData.value };
+    router.push({ query: newQuery }).catch(() => {});
+  };
+
+  return {
+    updateFormDataFromQuery,
+    updateUrlWithFormData,
+  };
+};

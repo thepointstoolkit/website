@@ -5,6 +5,7 @@
   },
   "menu": {
     "yearly_calendar": "Yearly Calendar",
+    "deep_link": "Direct Link",
     "routes": "Routes",
     "tools": "Tools",
     "settings": "Settings",
@@ -15,7 +16,9 @@
   },
   "buttons": {
     "search": "Search",
+    "submit": "Submit",
     "sidebar": "Sidebar",
+    "generate": "Generate",
     "filter_results": "Filter Results"
   },
   "filters": {
@@ -81,6 +84,20 @@
       "cabin": "Cabin",
       "outbound": "Outbound",
       "inbound": "Inbound"
+    }
+  },
+  "deep_link_form": {
+    "labels": {
+      "cabin": "Cabin",
+      "one_way": "One Way",
+      "round_trip": "Round Trip",
+      "origin": "Origin",
+      "destination": "Destination",
+      "depart": "Depart",
+      "return": "Return",
+    },
+    "strings": {
+      "any_cabin": "Any Cabin"
     }
   },
   "api_usage": {
